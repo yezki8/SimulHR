@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 23e55f3a90a127f4c99d07c9864f666d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: Bip01_Footsteps
+    100006: Bone
+    100008: Bone_001
+    100010: Bone_002
+    100012: Bone_003
+    100014: Bone_004
+    100016: Bone_005
+    100018: Bone_006
+    100020: Bone_007
+    100022: Bone_008
+    100024: Bone_009
+    100026: Bone_010
+    100028: Bone_011
+    100030: Bone_012
+    100032: Bone_013
+    100034: Bone_014
+    100036: Bone_015
+    100038: Bone_016
+    100040: Bone_017
+    100042: Bone_018
+    100044: Bone_020
+    100046: Camera01_Target
+    100048: Camera01_Target_001
+    100050: casual08_f_highpoly
+    400000: //RootNode
+    400002: Armature
+    400004: Bip01_Footsteps
+    400006: Bone
+    400008: Bone_001
+    400010: Bone_002
+    400012: Bone_003
+    400014: Bone_004
+    400016: Bone_005
+    400018: Bone_006
+    400020: Bone_007
+    400022: Bone_008
+    400024: Bone_009
+    400026: Bone_010
+    400028: Bone_011
+    400030: Bone_012
+    400032: Bone_013
+    400034: Bone_014
+    400036: Bone_015
+    400038: Bone_016
+    400040: Bone_017
+    400042: Bone_018
+    400044: Bone_020
+    400046: Camera01_Target
+    400048: Camera01_Target_001
+    400050: casual08_f_highpoly
+    2100000: body__ok_jpg
+    2100002: hair_transparent__Map__19
+    4300000: casual08_f_highpoly
+    7400000: Default Take
+    7400002: sofia0
+    7400004: sofia1
+    7400006: sofia10
+    7400008: sofia11
+    7400010: sofia12
+    7400012: sofia13
+    7400014: sofia2
+    7400016: sofia3
+    7400018: sofia4
+    7400020: sofia5
+    7400022: sofia6
+    7400024: sofia7
+    7400026: sofia8
+    7400028: sofia9
+    9500000: //RootNode
+    13700000: casual08_f_highpoly
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
