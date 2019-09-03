@@ -29,10 +29,14 @@ Steps:
 
 ## About
 
-**Kevin Andrew** - [Github](https://github.com/RaihanAk)
+**Kevin Andrew A A J W** - [Github](https://github.com/RaihanAk)
+
 **Muhammad Raihan Akbar** - [RaihanAk](https://github.com/RaihanAk)
+
 **Muhammad Jordiansyah** - [Github](https://github.com/RaihanAk)
+
 **Yehezkiel Yosua Parlindungan** - [yezki8](https://github.com/yezki8/)
+
 **Syafira Fitra Annisa** - [Github](https://github.com/RaihanAk)
 
 Unpad - OmniVR
