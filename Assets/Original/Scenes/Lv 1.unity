@@ -997,12 +997,13 @@ MonoBehaviour:
   - {fileID: 5484120343620837940, guid: cfd601eff631f9743bf765a587169756, type: 3}
   - {fileID: 5580019565316696017, guid: 1d73eb143f18cef4d86d8f7a9bc8a13d, type: 3}
   - {fileID: 4348199618952382209, guid: 6dfe00278a70f4e4e82e407724e1e3fc, type: 3}
-  spawnerLocation: {fileID: 248274225}
+  questionLocation: {fileID: 248274225}
   answerAImages:
   - {fileID: 6208123906808581487, guid: 94e371de99f18df4dadcdaf03d29862e, type: 3}
   - {fileID: 7646118374126229603, guid: b18eb5b097414a74880fe3cd2f8a0e66, type: 3}
   - {fileID: 6208123906808581487, guid: 94e371de99f18df4dadcdaf03d29862e, type: 3}
   answerATarget: {fileID: 180877200261471795}
+  correctAnswer: 620061006300
   dueTime: 480
 --- !u!4 &834767378
 Transform:
@@ -1816,18 +1817,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180877200261471795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 834767377}
-        m_MethodName: SelectCorrectAnswer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!224 &180877200261471793
@@ -1902,6 +1892,7 @@ GameObject:
   - component: {fileID: 180877200261471794}
   - component: {fileID: 180877200261471795}
   - component: {fileID: 180877200261471792}
+  - component: {fileID: 180877200261471799}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1909,6 +1900,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &180877200261471799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180877200261471798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef720fc1a0f2dc94abceb2e9fbc6e913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 180877200261471792}
+  station1Manager: {fileID: 834767377}
+  answerFor: 97
 --- !u!1001 &5260848032822175963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2030,6 +2036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440581116960503531, guid: 72c3abcdbe6fdc543b64cb6e65dfbd65,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440581116960503531, guid: 72c3abcdbe6fdc543b64cb6e65dfbd65,
         type: 3}

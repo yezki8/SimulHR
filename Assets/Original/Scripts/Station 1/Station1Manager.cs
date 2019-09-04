@@ -7,10 +7,12 @@ public class Station1Manager : GameManager
 {
     public GameObject[] questionObjects;
     private GameObject questionObject;
-    public Transform spawnerLocation;
+    public Transform questionLocation;
 
     public Image[] answerAImages;
     public Image answerATarget;
+
+    public char[] correctAnswer;
 
     private int currQuestion = 1;
     private int score;
@@ -20,7 +22,7 @@ public class Station1Manager : GameManager
     void Start()
     {
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
-        questionObject.transform.localPosition = spawnerLocation.localPosition;
+        questionObject.transform.localPosition = questionLocation.localPosition;
         //cube.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
 
         answerATarget.material = answerAImages[currQuestion - 1].material;
@@ -56,7 +58,7 @@ public class Station1Manager : GameManager
         // Change question
         Destroy(questionObject);
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
-        questionObject.transform.localPosition = spawnerLocation.localPosition;
+        questionObject.transform.localPosition = questionLocation.localPosition;
 
         // Change answer's selection
         answerATarget.material = answerAImages[currQuestion - 1].material;
@@ -66,6 +68,22 @@ public class Station1Manager : GameManager
 
     public void SelectIncorrectAnswer()
     {
+        score += 0;
         currQuestion++;
+
+        // Change question
+        Destroy(questionObject);
+        questionObject = Instantiate(questionObjects[currQuestion - 1]);
+        questionObject.transform.localPosition = questionLocation.localPosition;
+
+        // Change answer's selection
+        answerATarget.material = answerAImages[currQuestion - 1].material;
+
+        Debug.Log(score);
+    }
+
+    public int getCurrQuestion()
+    {
+        return currQuestion;
     }
 }

@@ -7,10 +7,9 @@ public class QuestionRotator : MonoBehaviour
     Vector3 mPrevPos = Vector3.zero;
     Vector3 mPosDelta = Vector3.zero;
 
-
-    // Update is called once per frame
     void Update()
     {
+        // Biar bisa diputer2 objek pertanyaaannya
         if (Input.GetMouseButton(0))
         {
             mPosDelta = Input.mousePosition - mPrevPos;
