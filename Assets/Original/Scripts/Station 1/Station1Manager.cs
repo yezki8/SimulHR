@@ -10,9 +10,17 @@ public class Station1Manager : GameManager
     public Transform spawnerLocation;
 
     public Image[] answerAImages;
-    public Image answerATarget;
+    public Image[] answerBImages;
+    public Image[] answerCImages;
+    public Image[] answerDImages;
 
-    private int currQuestion = 1;
+    public Image answerATarget;
+    public Image answerBTarget;
+    public Image answerCTarget;
+    public Image answerDTarget;
+
+    public int currQuestion = 1;
+    public Text txtAngkaSoal;
     private int score;
     private float timePassed = 0;
     public float dueTime;
@@ -21,10 +29,14 @@ public class Station1Manager : GameManager
     {
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
         questionObject.transform.localPosition = spawnerLocation.localPosition;
+        txtAngkaSoal.text = currQuestion.ToString("F0");
 
         //cube.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
 
         answerATarget.material = answerAImages[currQuestion - 1].material;
+        answerBTarget.material = answerBImages[currQuestion - 1].material;
+        answerCTarget.material = answerCImages[currQuestion - 1].material;
+        answerDTarget.material = answerDImages[currQuestion - 1].material;
     }
 
     // Fixed Update is called once per fixed time
@@ -55,6 +67,8 @@ public class Station1Manager : GameManager
         score += 100 / questionObjects.Length;
         currQuestion++;
 
+        txtAngkaSoal.text = currQuestion.ToString("F0");
+
         // Change question
         Destroy(questionObject);
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
@@ -62,6 +76,9 @@ public class Station1Manager : GameManager
 
         // Change answer's selection
         answerATarget.material = answerAImages[currQuestion - 1].material;
+        answerBTarget.material = answerBImages[currQuestion - 1].material;
+        answerCTarget.material = answerCImages[currQuestion - 1].material;
+        answerDTarget.material = answerDImages[currQuestion - 1].material;
 
         Debug.Log(score);
     }
@@ -70,5 +87,7 @@ public class Station1Manager : GameManager
     {
         currQuestion++;
         Debug.Log("incorrect answer has been clicked");
+
+        txtAngkaSoal.text = currQuestion.ToString("F0");
     }
 }
