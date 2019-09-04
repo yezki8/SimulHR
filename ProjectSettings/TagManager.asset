@@ -7,6 +7,12 @@ TagManager:
   - projectile
   - FxTemporaire
   - bowling
+  - Soal_1
+  - Soal_2
+  - pA
+  - pB
+  - pC
+  - pD
   layers:
   - Default
   - TransparentFX

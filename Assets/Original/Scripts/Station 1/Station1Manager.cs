@@ -16,6 +16,7 @@ public class Station1Manager : GameManager
     {
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
         questionObject.transform.localPosition = spawnerLocation.localPosition;
+
         //cube.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
     }
 
@@ -29,11 +30,11 @@ public class Station1Manager : GameManager
     // Update regular
     void Update()
     {
-        if (currQuestion > questionObjects.Length || timePassed > dueTime)
-        {
-            // Selesai gamenya
-            Debug.Log("Station 1 End");
-        }
+        //if (currQuestion > questionObjects.Length || timePassed > dueTime)
+        //{
+        //    // Selesai gamenya
+        //    Debug.Log("Station 1 End");
+        //}
     }
 
     public override void ReportNewScore()
@@ -43,6 +44,7 @@ public class Station1Manager : GameManager
 
     public void SelectCorrectAnswer()
     {
+        //Nambah soal setelah soal yang sebelumnya sudah dijawab
         score += 100 / questionObjects.Length;
         currQuestion++;
 
@@ -56,5 +58,6 @@ public class Station1Manager : GameManager
     public void SelectIncorrectAnswer()
     {
         currQuestion++;
+        Debug.Log("incorrect answer has been clicked");
     }
 }
