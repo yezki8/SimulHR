@@ -25,6 +25,7 @@ Steps:
 1. Game Design Documentation
 2. Art Bible
 3. Technical Design Documentation
+
 *Link later...*
 
 ## About
