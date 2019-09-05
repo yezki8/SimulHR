@@ -29,6 +29,7 @@ public class Station1Manager : GameManager
     {
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
         questionObject.transform.localPosition = spawnerLocation.localPosition;
+        questionObject.transform.parent = spawnerLocation;
         txtAngkaSoal.text = currQuestion.ToString("F0");
 
         //cube.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
@@ -73,6 +74,7 @@ public class Station1Manager : GameManager
         Destroy(questionObject);
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
         questionObject.transform.localPosition = spawnerLocation.localPosition;
+        questionObject.transform.parent = spawnerLocation;
 
         // Change answer's selection
         answerATarget.material = answerAImages[currQuestion - 1].material;
