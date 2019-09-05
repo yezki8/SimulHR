@@ -15,11 +15,11 @@ public class ProgressCache : MonoBehaviour
 
     private void SingletonManager()
     {
-
+        // Did not understand ^^
     }
 
     public void SaveData()
     {
-
+        // Save values of tests into an external data
     }
 }

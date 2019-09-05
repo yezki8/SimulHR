@@ -1337,6 +1337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834767378}
   - component: {fileID: 834767377}
+  - component: {fileID: 834767379}
   m_Layer: 0
   m_Name: GameManager Station 1
   m_TagString: Untagged
@@ -1356,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda65d7e3a627c8449051dc42ec9b3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resultScore: []
   questionObjects:
   - {fileID: 5484120343620837940, guid: cfd601eff631f9743bf765a587169756, type: 3}
   - {fileID: 5580019565316696017, guid: 1d73eb143f18cef4d86d8f7a9bc8a13d, type: 3}
@@ -1434,6 +1436,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834767379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834767376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29495256c3fabc443aec3f3804409aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893344183
 GameObject:
   m_ObjectHideFlags: 0

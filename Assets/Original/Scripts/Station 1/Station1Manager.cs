@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(SceneChanger))]
+
 public class Station1Manager : GameManager 
 {
     public GameObject[] questionObjects;
@@ -20,14 +22,14 @@ public class Station1Manager : GameManager
     public Image answerDTarget;
 
     public char[] correctAnswer;
+    public float dueTime;
+    public bool isStationComplete = false;
+    private int currQuestion = 1;
+    private float score;
+    private float timePassed = 0;
 
     public Text txtAngkaSoal;
-    private int currQuestion = 1;
-    private int score;
-    private float timePassed = 0;
-    public float dueTime;
-
-    public bool isStationComplete = false;
+    SceneChanger sceneChanger;
 
     void Start()
     {
@@ -40,6 +42,8 @@ public class Station1Manager : GameManager
         answerDTarget.material = answerDImages[currQuestion - 1].material;
 
         txtAngkaSoal.text = currQuestion.ToString("F0");
+
+        sceneChanger = GetComponent<SceneChanger>();
     }
 
     // Fixed Update is called once per fixed time
@@ -134,6 +138,10 @@ public class Station1Manager : GameManager
         Destroy(answerBTarget.gameObject);
         Destroy(answerCTarget.gameObject);
         Destroy(answerDTarget.gameObject);
+
+        AddNewScore(score);
+
+        sceneChanger.sceneToIntro();
 
         // To-do: Bikin kata2 selamatnya
     }
