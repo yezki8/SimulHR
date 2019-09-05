@@ -25,7 +25,7 @@ public class Station1Manager : GameManager
     public float dueTime;
     public bool isStationComplete = false;
     private int currQuestion = 1;
-    private float score;
+    private float score = 0.0f;
     private float timePassed = 0;
 
     public Text txtAngkaSoal;
@@ -33,31 +33,35 @@ public class Station1Manager : GameManager
 
     void Start()
     {
+        sceneChanger = GetComponent<SceneChanger>();
+
+        // Set Question's object
         questionObject = Instantiate(questionObjects[currQuestion - 1]);
         questionObject.transform.localPosition = questionLocation.localPosition;
+        questionObject.transform.parent = questionLocation;
 
+        // Set answers selection
         answerATarget.material = answerAImages[currQuestion - 1].material;
         answerBTarget.material = answerBImages[currQuestion - 1].material;
         answerCTarget.material = answerCImages[currQuestion - 1].material;
         answerDTarget.material = answerDImages[currQuestion - 1].material;
 
+        // Display current question
         txtAngkaSoal.text = currQuestion.ToString("F0");
-
-        sceneChanger = GetComponent<SceneChanger>();
     }
 
     // Fixed Update is called once per fixed time
     void FixedUpdate()
     {
-        if (! isStationComplete)
+        if (!isStationComplete)
             timePassed += Time.deltaTime;
     }
 
-    // Regular Update
+    // Update regular
     void Update()
     {
         // Check if station 1 is not completed yet
-        if (! isStationComplete)
+        if (!isStationComplete)
         {
             // Check if all question have been answered OR reaching dueTime
             if (currQuestion > questionObjects.Length || timePassed > dueTime)
@@ -76,8 +80,8 @@ public class Station1Manager : GameManager
 
     public void SelectCorrectAnswer()
     {
-        //Nambah soal setelah soal yang sebelumnya sudah dijawab
-        score += 100 / questionObjects.Length;
+        //Nambah soal dan skor setelah soal yang sebelumnya sudah dijawab
+        score += 100.0f / questionObjects.Length; ;
         currQuestion++;
 
         // Check array outta bound error
@@ -87,8 +91,9 @@ public class Station1Manager : GameManager
             Destroy(questionObject);
             questionObject = Instantiate(questionObjects[currQuestion - 1]);
             questionObject.transform.localPosition = questionLocation.localPosition;
+            questionObject.transform.parent = questionLocation;
 
-            // Change answer's selection
+            // Change answers selection
             answerATarget.material = answerAImages[currQuestion - 1].material;
             answerBTarget.material = answerBImages[currQuestion - 1].material;
             answerCTarget.material = answerCImages[currQuestion - 1].material;
@@ -112,8 +117,9 @@ public class Station1Manager : GameManager
             Destroy(questionObject);
             questionObject = Instantiate(questionObjects[currQuestion - 1]);
             questionObject.transform.localPosition = questionLocation.localPosition;
+            questionObject.transform.parent = questionLocation;
 
-            // Change answer's selection
+            // Change answers selection
             answerATarget.material = answerAImages[currQuestion - 1].material;
             answerBTarget.material = answerBImages[currQuestion - 1].material;
             answerCTarget.material = answerCImages[currQuestion - 1].material;
@@ -138,8 +144,6 @@ public class Station1Manager : GameManager
         Destroy(answerBTarget.gameObject);
         Destroy(answerCTarget.gameObject);
         Destroy(answerDTarget.gameObject);
-
-        AddNewScore(score);
 
         sceneChanger.sceneToIntro();
 

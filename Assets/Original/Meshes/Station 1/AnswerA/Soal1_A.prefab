@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4678726669744659702}
   - component: {fileID: 6208123906808581487}
   m_Layer: 0
-  m_Name: Soal1_A
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cae834ed359d9e64bb11fd7cf9fa3baf, type: 2}
+  m_Material: {fileID: 2100000, guid: a5861c38db986ad47b8138442f4f9f21, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:

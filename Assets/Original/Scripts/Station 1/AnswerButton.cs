@@ -21,17 +21,17 @@ public class AnswerButton : MonoBehaviour
         // Check if the station still on going
         if (!station1Manager.isStationComplete)
         {
-            // check with station 1 manager's array of correct answer
-            if (answerFor == station1Manager.correctAnswer[station1Manager.getCurrQuestion() - 1])
-            {
-                Debug.Log("C o r r e c t!");
-                station1Manager.SelectCorrectAnswer();
-            }
-            else
-            {
-                Debug.Log("I n c o r r e c t !");
-                station1Manager.SelectIncorrectAnswer();
-            }
+           // check with station 1 manager's array of correct answer
+           if (answerFor == station1Manager.correctAnswer[station1Manager.getCurrQuestion() - 1])
+           {
+               Debug.Log("C o r r e c t!");
+               station1Manager.SelectCorrectAnswer();
+           }
+           else
+           {
+               Debug.Log("I n c o r r e c t !");
+               station1Manager.SelectIncorrectAnswer();
+           }
         }
     }
 }
