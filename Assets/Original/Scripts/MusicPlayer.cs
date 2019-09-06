@@ -7,22 +7,14 @@ public class MusicPlayer : MonoBehaviour
 {
     AudioSource audioData;
 
-    public void startMusic()
+    private void Start()
     {
         audioData = GetComponent<AudioSource>();
         audioData.Play();
         Debug.Log("started");
     }
-
-    public void pauseMusic()
+    private void Update()
     {
-        audioData = GetComponent<AudioSource>();
-        audioData.Pause();
-    }
-
-    public void stopMusic()
-    {
-        audioData = GetComponent<AudioSource>();
-        audioData.Stop();
+        
     }
 }
