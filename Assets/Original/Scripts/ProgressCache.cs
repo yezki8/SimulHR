@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class ProgressCache : MonoBehaviour
 {
-    public static ProgressCache mainCache;
+    public static ProgressCache Instance { get; private set; }
+
     public float[] resultValue;
-    public int currentStation;
+    public int currentStation = 1;
 
-    public void ReportNewValue(float value)
+    private void Awake()
     {
-
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void SingletonManager()
+    public void ReportNewValue(float scoreValue)
     {
-        // Did not understand ^^
-    }
+        resultValue[currentStation - 1] = scoreValue;
+        currentStation++;
+        Debug.Log(currentStation);
+    }    
 
     public void SaveData()
     {

@@ -75,7 +75,8 @@ public class Station1Manager : GameManager
 
     public override void ReportNewScore()
     {
-        // Placeholder: Buat nyimpen soal di GameManager utama
+        // Buat nyimpen soal di GameManager utama
+        ProgressCache.Instance.ReportNewValue(score);
     }
 
     public void SelectCorrectAnswer()
@@ -144,6 +145,8 @@ public class Station1Manager : GameManager
         Destroy(answerBTarget.gameObject);
         Destroy(answerCTarget.gameObject);
         Destroy(answerDTarget.gameObject);
+
+        ReportNewScore();
 
         sceneChanger.sceneToIntro();
 

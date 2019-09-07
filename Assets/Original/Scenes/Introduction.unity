@@ -3420,7 +3420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2715d05cf3d1d5f41a38e8089ac7ac15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resultScore: []
 --- !u!4 &574009149
 Transform:
   m_ObjectHideFlags: 0
@@ -3464,7 +3463,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  currentStation: 0
+  currentStation: 1
 --- !u!1 &578957479
 GameObject:
   m_ObjectHideFlags: 0
