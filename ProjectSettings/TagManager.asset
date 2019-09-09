@@ -13,6 +13,7 @@ TagManager:
   - pB
   - pC
   - pD
+  - AnswerButton
   layers:
   - Default
   - TransparentFX
