@@ -3,67 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using Valve.VR;
 
 public class Pointer : MonoBehaviour
 {
-    public static GameObject currentObject;
-    int currentID;
+    public float m_DefaultLength = 5.0f;
+    public GameObject m_Dot;
+    public VRInputModule m_InputModule;
 
-    //Referensi fungsi tombol
-    public SteamVR_Action_Boolean AnswerButton;
+    private LineRenderer m_LineRenderer = null;
 
-    //Referensi tangan
-    public SteamVR_Input_Sources handType;
-
-    //Referensi tombol
-    public Button pilihan;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        currentObject = null;
-        currentID = 0;
-
-        //FUngsi Trigger
-        AnswerButton.AddOnStateDownListener(TriggerDown, handType);
-        AnswerButton.AddOnStateUpListener(TriggerUp, handType);
+        m_LineRenderer = GetComponent<LineRenderer>();
     }
 
-    private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    private void Update()
     {
-        Debug.Log("Trigger is up)");
+        UpdateLine();
     }
 
-    private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    private void UpdateLine()
     {
-        Debug.Log("Trigger is down");
-    }
+        PointerEventData data = m_InputModule.GetData();
+        float targetLength = data.pointerCurrentRaycast.distance == 0 ? m_DefaultLength : data.pointerCurrentRaycast.distance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.forward, 100.0F);
+        Vector3 endPosition = transform.position + (transform.forward * targetLength);
 
-        for (int i = 0; i < hits.Length; i++)
-        {
-            RaycastHit hit = hits[i];
+        Ray raycast = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        bool bHit = Physics.Raycast(raycast, out hit, m_DefaultLength);
 
-            int id = hit.collider.gameObject.GetInstanceID();
+        if (hit.collider != null)
+            endPosition = hit.point;
 
-            if (currentID != id)
-            {
-                currentID = id;
-                currentObject = hit.collider.gameObject;
-
-                string name = currentObject.tag;
-                if (name == "AnswerButton")
-                {
-                    Debug.Log("Button terdeteksi");
-
-                }
-            }
-        }        
+        m_Dot.transform.position = endPosition;
+        m_LineRenderer.SetPosition(0, transform.position);
+        m_LineRenderer.SetPosition(1, endPosition);
     }
 }
