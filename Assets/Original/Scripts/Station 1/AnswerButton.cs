@@ -25,7 +25,7 @@ public class AnswerButton : MonoBehaviour
         if (!station1Manager.isStationComplete)
         {
            // check with station 1 manager's array of correct answer
-           if (answerFor == station1Manager.correctAnswer[station1Manager.getCurrQuestion() - 1])
+           if (answerFor == station1Manager.correctAnswer[station1Manager.getCurrQuestion() - 1]) // -1 dihilangkan
            {
                Debug.Log("C o r r e c t!");
                station1Manager.SelectCorrectAnswer();
