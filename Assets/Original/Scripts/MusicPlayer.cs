@@ -11,7 +11,7 @@ public class MusicPlayer : MonoBehaviour
     {
         audioData = GetComponent<AudioSource>();
         audioData.Play();
-        Debug.Log("started");
+        Debug.Log("Music started");
     }
     private void Update()
     {

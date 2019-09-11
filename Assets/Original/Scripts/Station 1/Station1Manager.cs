@@ -24,59 +24,55 @@ public class Station1Manager : GameManager
     public char[] correctAnswer;
     public float dueTime;
     public bool isStationComplete = false;
-    private int currQuestion = 0;           //0 adalah permulaan
+    private int currQuestion = 0;           //0 is instruction
     private float score = 0.0f;
     private float timePassed = 0;
 
-    //umpulan text
-    public Text txtAngkaSoal;
-    public Text txtKeteranganJawaban;
-    public Text txtKeteranganSoal;
-    public Text txtKeteranganCara;
-    public Text txtSoal;
     SceneChanger sceneChanger;
+    Station1UI station1UI;
 
     void Start()
     {
         sceneChanger = GetComponent<SceneChanger>();
+        station1UI = GetComponent<Station1UI>();
 
         // Set tutorial's object, which is questionObjects 15
-        questionObject = Instantiate(questionObjects[15]);              //15 adalah objek biasa untuk tutorial
-        questionObject.transform.localPosition = questionLocation.localPosition;
-        questionObject.transform.parent = questionLocation;
+        //questionObject = Instantiate(questionObjects[currQuestion - 1]);              //15 adalah objek biasa untuk tutorial
+        //questionObject.transform.localPosition = questionLocation.localPosition;
+        //questionObject.transform.parent = questionLocation;
 
         // Set answers selection
         //answerATarget.material = answerAImages[currQuestion - 1].material;
         //answerBTarget.material = answerBImages[currQuestion - 1].material;
         //answerCTarget.material = answerCImages[currQuestion - 1].material;
         //answerDTarget.material = answerDImages[currQuestion - 1].material;
-
-        // Display Tutorial Text
-        txtAngkaSoal.text = ("Tutorial");           //nomor soal kosong pas mulai
-        txtKeteranganJawaban.text = ("Pilih jawaban menggunakan Laser Pointer dari tangan kanan anda untuk memulai.");
-        txtKeteranganSoal.text = ("Tekan tombol trigger tangan kanan anda untuk memegang objek soal");
-        txtKeteranganCara.text = ("Pilihlah jawaban sesuai dengan objek yang tertera didepan anda");
     }
 
     // Fixed Update is called once per fixed time
     void FixedUpdate()
     {
-        if (!isStationComplete && currQuestion > 0)     //waktu dibuat maju setelah question 1 mulai
+        // Only run the timer IF instruction has completed AND Station has yet to complete
+        if (station1UI.isInstructionComplete && !isStationComplete)
+        {
             timePassed += Time.deltaTime;
+        }
     }
 
-    // Update regular
     void Update()
-    {
-        // Check if station 1 is not completed yet
-        if (!isStationComplete)
+    { 
+        // Check if instruction for station 1 has completed yet
+        if (station1UI.isInstructionComplete)
         {
-            // Check if all question have been answered OR reaching dueTime
-            if (currQuestion > questionObjects.Length || timePassed > dueTime)
+            // Check if station 1 is not completed yet
+            if (!isStationComplete)
             {
-                // EndGame
-                isStationComplete = true;
-                stationEnds();
+                // Check if all question have been answered OR reaching dueTime
+                if (currQuestion > questionObjects.Length || timePassed > dueTime)
+                {
+                    // EndGame
+                    isStationComplete = true;
+                    stationEnds();
+                }
             }
         }
     }
@@ -94,7 +90,7 @@ public class Station1Manager : GameManager
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= 15)  //questionObjects.Length
+        if (currQuestion <= questionObjects.Length)
         {
             
             // Change question
@@ -108,12 +104,6 @@ public class Station1Manager : GameManager
             answerBTarget.material = answerBImages[currQuestion - 1].material;
             answerCTarget.material = answerCImages[currQuestion - 1].material;
             answerDTarget.material = answerDImages[currQuestion - 1].material;
-
-            // Update indikator soal
-            txtAngkaSoal.text = currQuestion.ToString("F0");
-            txtKeteranganJawaban.text = ("");
-            txtKeteranganSoal.text = ("");
-            txtKeteranganCara.text = ("");
         }
         else
         {
@@ -122,12 +112,6 @@ public class Station1Manager : GameManager
             Destroy(answerBTarget);
             Destroy(answerCTarget);
             Destroy(answerDTarget);
-            txtAngkaSoal.text = ("");
-            txtKeteranganJawaban.text = ("Selamat, anda telah menyelesaikan scene 1. ");
-            txtKeteranganCara.text = ("Score tidak akan ditampilkan, melainkan disimpan didalam sistem");
-            txtAngkaSoal.text = ("");
-            txtSoal.text = ("");
-            txtKeteranganSoal.text = ("Scene selanjutnya sedang dalam proses development, terima kasih telah mencoba scene ini :)");
         }
     }
 
@@ -138,7 +122,7 @@ public class Station1Manager : GameManager
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= 15)
+        if (currQuestion <= questionObjects.Length)
         {
             // Change question
             Destroy(questionObject);
@@ -151,12 +135,6 @@ public class Station1Manager : GameManager
             answerBTarget.material = answerBImages[currQuestion - 1].material;
             answerCTarget.material = answerCImages[currQuestion - 1].material;
             answerDTarget.material = answerDImages[currQuestion - 1].material;
-
-            // Update indikator soal
-            txtAngkaSoal.text = currQuestion.ToString("F0");
-            txtKeteranganJawaban.text = ("");
-            txtKeteranganSoal.text = ("");
-            txtKeteranganCara.text = ("");
         }
         else
         {
@@ -165,25 +143,12 @@ public class Station1Manager : GameManager
             Destroy(answerBTarget);
             Destroy(answerCTarget);
             Destroy(answerDTarget);
-            txtKeteranganJawaban.text = ("Selamat, anda telah menyelesaikan scene 1. ");
-            txtKeteranganCara.text = ("Score tidak akan ditampilkan, melainkan disimpan didalam sistem");
-            txtAngkaSoal.text = ("");
-            txtSoal.text = ("");
-            txtKeteranganSoal.text = ("Scene selanjutnya sedang dalam proses development, terima kasih telah mencoba scene ini :)");
         }
     }
 
     public int getCurrQuestion()
     {
-        if (currQuestion == 0)
-        {
-            return 15;
-        }
-        else
-        {
-            return currQuestion;
-        }
-        
+        return currQuestion;        
     }
 
     public void stationEnds()
@@ -196,7 +161,7 @@ public class Station1Manager : GameManager
         Destroy(answerCTarget.gameObject);
         Destroy(answerDTarget.gameObject);
 
-        ReportNewScore();
+        //ReportNewScore();
 
         sceneChanger.sceneToIntro();
 
