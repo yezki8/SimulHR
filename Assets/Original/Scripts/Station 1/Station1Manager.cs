@@ -21,6 +21,8 @@ public class Station1Manager : GameManager
     public Image answerCTarget;
     public Image answerDTarget;
 
+    public GameObject NavButton;      //button untuk pindah ke intro, dibuat gameObject biar bisa di active dan non active
+
     public char[] correctAnswer;
     public float dueTime;
     public bool isStationComplete = false;
@@ -35,6 +37,8 @@ public class Station1Manager : GameManager
     {
         sceneChanger = GetComponent<SceneChanger>();
         station1UI = GetComponent<Station1UI>();
+
+        NavButton.SetActive(false);           //Hide buttonnya pada saat scene mulai
 
         // Set tutorial's object, which is questionObjects 15
         //questionObject = Instantiate(questionObjects[currQuestion - 1]);              //15 adalah objek biasa untuk tutorial
@@ -112,6 +116,7 @@ public class Station1Manager : GameManager
             Destroy(answerBTarget);
             Destroy(answerCTarget);
             Destroy(answerDTarget);
+            
         }
     }
 
@@ -161,9 +166,11 @@ public class Station1Manager : GameManager
         Destroy(answerCTarget.gameObject);
         Destroy(answerDTarget.gameObject);
 
+        NavButton.SetActive(true);            //nyalain buttonnya
+
         //ReportNewScore();
 
-        sceneChanger.sceneToIntro();
+        //sceneChanger.sceneToIntro();
 
         // To-do: Bikin kata2 selamatnya
     }
