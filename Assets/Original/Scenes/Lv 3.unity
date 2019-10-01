@@ -286,10 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240aaa5e4cf51e540a87e2f80815f1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Yes: {fileID: 317585874}
-  No: {fileID: 1400845493}
-  YesTrigger: {fileID: 1819205282}
-  NoTrigger: {fileID: 1970594340}
   SoalKanan: {fileID: 1041408352}
   SoalKiri: {fileID: 612198745}
   KumpulanSoalKanan:
@@ -325,35 +321,38 @@ MonoBehaviour:
   - MBVR1256XM32
   KumpulanSoalKiri:
   - Arrayan
-  - 
-  - 
+  - Axelle
+  - Muzdalifah
   - Iskandarsyah
-  - 
+  - Maman Setiawan
   - Mahaprana Putra
-  - 
-  - 
+  - Radhika Rasendriya
+  - I Gusti Ngurah Askhara
   - Zaidan Ravindra Syahreza
-  - 
+  - Alvaro Abhimanyu Faresta
   - 73458
-  - 
-  - 
+  - 84639
+  - 358426
   - 8420495
-  - 
+  - 7318231
   - 88274596
-  - 
-  - 
+  - 902116574
+  - 2714281622
   - 198120122006041002
-  - 
+  - 197709261989401001
   - L873E
-  - 
-  - 
+  - B8FG3
+  - AUX76FR
   - CB234TY
-  - 
-  - 
-  - 
-  - 
+  - MT33VXCF
+  - PO90GH2H
+  - D12FR67CQ
+  - MAVR43TR32
   - RXV29MTQ34W
-  - 
+  - MBVR1256MX32
+  correctAnswer: 620073007300620073006200730073006200730062007300730062007300620073007300620073006200730073006200730062007300730062007300
+  dueTime: 0
+  isStationComplete: 0
 --- !u!4 &247439019
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +539,7 @@ GameObject:
   - component: {fileID: 317585876}
   m_Layer: 0
   m_Name: Green
-  m_TagString: Untagged
+  m_TagString: AnswerButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1324,7 +1323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &752535080
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,7 +1358,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752535079}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1595,9 +1594,9 @@ MonoBehaviour:
   onButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390825272}
-        m_MethodName: OnButtonDown
-        m_Mode: 0
+      - m_Target: {fileID: 1970594345}
+        m_MethodName: Answered
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1718,7 +1717,7 @@ GameObject:
   - component: {fileID: 1400845495}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: AnswerButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1966,6 +1965,7 @@ GameObject:
   - component: {fileID: 1819205286}
   - component: {fileID: 1819205285}
   - component: {fileID: 1819205284}
+  - component: {fileID: 1819205287}
   m_Layer: 0
   m_Name: YesTrigger
   m_TagString: Untagged
@@ -1981,7 +1981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819205282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.879, z: 0}
+  m_LocalPosition: {x: 0, y: -1.0719998, z: 0}
   m_LocalScale: {x: 1, y: 0.10714, z: 1}
   m_Children: []
   m_Father: {fileID: 2597280848599293899}
@@ -1995,7 +1995,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819205282}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2045,6 +2045,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819205282}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1819205287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819205282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7523c6c3e35296b49a8704a1f43b529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  station3Manager: {fileID: 247439018}
+  station3UI: {fileID: 0}
+  answerFor: 98
 --- !u!1 &1835100023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2254,7 @@ GameObject:
   - component: {fileID: 1970594344}
   - component: {fileID: 1970594343}
   - component: {fileID: 1970594342}
+  - component: {fileID: 1970594345}
   m_Layer: 0
   m_Name: NoTrigger
   m_TagString: Untagged
@@ -2254,7 +2270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970594340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8789999, z: 0.032}
+  m_LocalPosition: {x: 0, y: -1.072, z: 0.032}
   m_LocalScale: {x: 1, y: 0.10710001, z: 1}
   m_Children: []
   m_Father: {fileID: 1390825271}
@@ -2318,6 +2334,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970594340}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1970594345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970594340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7523c6c3e35296b49a8704a1f43b529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  station3Manager: {fileID: 247439018}
+  station3UI: {fileID: 0}
+  answerFor: 115
 --- !u!1 &1974657474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,9 +2847,9 @@ MonoBehaviour:
   onButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2706754355609674977}
-        m_MethodName: OnButtonDown
-        m_Mode: 0
+      - m_Target: {fileID: 1819205287}
+        m_MethodName: Answered
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2847,7 +2878,18 @@ MonoBehaviour:
       PublicKeyToken=null
   onButtonIsPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819205282}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   engaged: 0

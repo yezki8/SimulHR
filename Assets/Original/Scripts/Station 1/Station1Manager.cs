@@ -167,6 +167,7 @@ public class Station1Manager : GameManager
         Destroy(answerDTarget.gameObject);
 
         NavButton.SetActive(true);            //nyalain buttonnya
+        station1UI.showScore(score);
 
         //ReportNewScore();
 

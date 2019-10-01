@@ -81,10 +81,8 @@ public class Station1UI : MonoBehaviour
         {
             txtAngkaSoal.text = ("");
             txtKeteranganJawaban.text = ("Selamat, anda telah menyelesaikan scene 1. ");
-            txtKeteranganCara.text = ("Score tidak akan ditampilkan, melainkan disimpan didalam sistem");
             txtAngkaSoal.text = ("");
             txtSoal.text = ("");
-            txtKeteranganSoal.text = ("Scene selanjutnya sedang dalam proses development, terima kasih telah mencoba scene ini :)");
         }
     }
 
@@ -103,5 +101,18 @@ public class Station1UI : MonoBehaviour
     public void tambahCounter()
     {
         TutorialText++;
+    }
+
+    public void showScore(float score)
+    {
+        if (score > 98)
+        {
+            txtKeteranganCara.text = ("Score anda: 100");
+        }
+        else
+        {
+            txtKeteranganCara.text = ("Score anda: ") + (int)score;
+        }
+        Debug.Log("score at text: " + score.ToString());
     }
 }
