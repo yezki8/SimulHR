@@ -27,7 +27,7 @@ public class Station1Manager : GameManager
     public float dueTime;
     public bool isStationComplete = false;
     private int currQuestion = 0;           //0 is instruction
-    private float score = 0.0f;
+    private int score = 0;
     private float timePassed = 0;
 
     SceneChanger sceneChanger;
@@ -90,7 +90,7 @@ public class Station1Manager : GameManager
     public void SelectCorrectAnswer()
     {
         //Nambah soal dan skor setelah soal yang sebelumnya sudah dijawab
-        score += 100.0f / questionObjects.Length; ;
+        score += 1;
         currQuestion++;
 
         // Check array outta bound error

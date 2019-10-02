@@ -23,16 +23,29 @@ public class AnswerButton3 : MonoBehaviour
 
     public void Answered()
     {
-        Debug.Log("Button is Pressed");
-        if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
+        //Jika totorial blom selesai, maka kehitungnya incorrect
+        if (!station3UI.isInstructionComplete)
         {
-            Debug.Log("C o r r e c t !");
-            station3Manager.SelectCorrectAnswer();
+            station3UI.SetInstructionComplete();
+            Debug.Log(station3UI.isInstructionComplete);
+
+            // Instruction is completed. Proceed to start the station 1 questions
+            station3Manager.SelectIncorrectAnswer();
         }
         else
         {
-            Debug.Log("I n c o r r e c t !");
-            station3Manager.SelectIncorrectAnswer();
+            if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
+            {
+                Debug.Log("C o r r e c t !");
+                station3Manager.SelectCorrectAnswer();
+            }
+            else
+            {
+                Debug.Log("answerFor: " + answerFor + ", correctAnswer: " + station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1]);
+                Debug.Log("I n c o r r e c t !");
+                station3Manager.SelectIncorrectAnswer();
+            }
         }
+        
     }
 }

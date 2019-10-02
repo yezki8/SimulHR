@@ -79,10 +79,7 @@ public class Station1UI : MonoBehaviour
 
         if (station1Manager.isStationComplete)
         {
-            txtAngkaSoal.text = ("");
-            txtKeteranganJawaban.text = ("Selamat, anda telah menyelesaikan scene 1. ");
-            txtAngkaSoal.text = ("");
-            txtSoal.text = ("");
+            
         }
     }
 
@@ -105,14 +102,9 @@ public class Station1UI : MonoBehaviour
 
     public void showScore(float score)
     {
-        if (score > 98)
-        {
-            txtKeteranganCara.text = ("Score anda: 100");
-        }
-        else
-        {
-            txtKeteranganCara.text = ("Score anda: ") + (int)score;
-        }
+        
+        txtKeteranganCara.text = ("Anda benar ") + score + (" dari 15 soal");
+        
         Debug.Log("score at text: " + score.ToString());
     }
 }

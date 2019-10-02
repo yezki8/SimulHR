@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Manage : MonoBehaviour
 {
+
     public Text SoalKanan, SoalKiri;
     public string[] KumpulanSoalKanan;
     public string[] KumpulanSoalKiri;
@@ -12,15 +13,16 @@ public class Manage : MonoBehaviour
 
     public float dueTime;
     public bool isStationComplete = false;
-    private int currQuestion = 1;           //0 is instruction
-    private float score = 0.0f;
+    public int currQuestion = 0;           //0 is instruction
+    public int score;
     private float timePassed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        SoalKanan.text = (KumpulanSoalKanan[currQuestion - 1]);
-        SoalKiri.text = (KumpulanSoalKiri[currQuestion - 1]);
+        //SoalKanan.text = (KumpulanSoalKanan[currQuestion - 1]);
+        //SoalKiri.text = (KumpulanSoalKiri[currQuestion - 1]);
+        score = 0;
     }
 
     private void FixedUpdate()
@@ -38,7 +40,7 @@ public class Manage : MonoBehaviour
         if (!isStationComplete)
         {
             // Check if all question have been answered OR reaching dueTime
-            if (currQuestion > KumpulanSoalKanan.Length || timePassed > dueTime || currQuestion > KumpulanSoalKanan.Length)
+            if (currQuestion >= KumpulanSoalKanan.Length || timePassed > dueTime || currQuestion >= KumpulanSoalKiri.Length)
             {
                 // EndGame
                 isStationComplete = true;
@@ -49,15 +51,15 @@ public class Manage : MonoBehaviour
     public void SelectCorrectAnswer()
     {
         //Nambah soal dan skor setelah soal yang sebelumnya sudah dijawab
-        score += 100.0f / KumpulanSoalKanan.Length; ;
+        score += 1 ;
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= KumpulanSoalKanan.Length)
+        if (currQuestion < KumpulanSoalKanan.Length)
         {
             // Change question
-            SoalKanan.text = (KumpulanSoalKanan[currQuestion - 1]);
-            SoalKiri.text = (KumpulanSoalKiri[currQuestion - 1]);
+            SoalKanan.text = (KumpulanSoalKanan[currQuestion-1]);
+            SoalKiri.text = (KumpulanSoalKiri[currQuestion-1]);
         }
         else
         {
@@ -70,20 +72,24 @@ public class Manage : MonoBehaviour
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= KumpulanSoalKanan.Length)
+        if (currQuestion < KumpulanSoalKanan.Length)
         {
             // Change question
-            SoalKanan.text = (KumpulanSoalKanan[currQuestion - 1]);
-            SoalKiri.text = (KumpulanSoalKiri[currQuestion - 1]);
+            SoalKanan.text = (KumpulanSoalKanan[currQuestion-1]);
+            SoalKiri.text = (KumpulanSoalKiri[currQuestion-1]);
         }
         else
         {
-            SoalKanan.text = "selesai";
-            SoalKiri.text = "selesai";
+            isStationComplete = true;
         }
     }
     public int getCurrQuestion()
     {
         return currQuestion;
+    }
+
+    public int getScore()
+    {
+        return score;
     }
 }

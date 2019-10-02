@@ -10,6 +10,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Lv 1");
     }
+    public void sceneToStation3()
+    {
+        SceneManager.LoadScene("Station 3");
+    }
 
     public void sceneToIntro()
     {
