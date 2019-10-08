@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: Neon White
+  m_Name: PFX Station 3
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.98
+      intensity: 1.18
       radius: 0.5
       sampleCount: 6
       downsampling: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Settings:
       reflection:
         blendType: 1
-        reflectionQuality: 2
+        reflectionQuality: 0
         maxDistance: 143
         iterationCount: 110
         stepSize: 3
@@ -68,7 +68,7 @@ MonoBehaviour:
         fresnelFade: 1
         fresnelFadePower: 1
       screenEdgeMask:
-        intensity: 0.03
+        intensity: 0.16
   depthOfField:
     m_Enabled: 0
     m_Settings:
@@ -101,10 +101,10 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 2
-        threshold: 0.8
-        softKnee: 0.447
-        radius: 1.62
+        intensity: 1.6
+        threshold: 0.9
+        softKnee: 0.88
+        radius: 2.06
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
@@ -114,15 +114,15 @@ MonoBehaviour:
     m_Settings:
       tonemapping:
         tonemapper: 2
-        neutralBlackIn: 0.046
-        neutralWhiteIn: 12.9
-        neutralBlackOut: 0.003
+        neutralBlackIn: 0.08
+        neutralWhiteIn: 4.4
+        neutralBlackOut: -0.005
         neutralWhiteOut: 10
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
         postExposure: 0.4
-        temperature: -5
+        temperature: 0
         tint: 0
         hueShift: 0
         saturation: 1.2
