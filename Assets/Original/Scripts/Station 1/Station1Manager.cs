@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(SceneChanger))]
+[System.Serializable]
+public class QuestionCluster
+{
+    public GameObject questionObject;
+    public char correctAnswer;
+    public List<Image> choiceList = new List<Image>();
+}
 
 public class Station1Manager : GameManager 
 {
+    [SerializeField] QuestionCluster[] questionList;
+
     public GameObject[] questionObjects;
     private GameObject questionObject;
     public Transform questionLocation;
@@ -30,26 +38,12 @@ public class Station1Manager : GameManager
     private int score = 0;
     private float timePassed = 0;
 
-    SceneChanger sceneChanger;
-    Station1UI station1UI;
+    public SceneChanger sceneChanger;
+    public Station1UI station1UI;
 
     void Start()
     {
-        sceneChanger = GetComponent<SceneChanger>();
-        station1UI = GetComponent<Station1UI>();
-
         NavButton.SetActive(false);           //Hide buttonnya pada saat scene mulai
-
-        // Set tutorial's object, which is questionObjects 15
-        //questionObject = Instantiate(questionObjects[currQuestion - 1]);              //15 adalah objek biasa untuk tutorial
-        //questionObject.transform.localPosition = questionLocation.localPosition;
-        //questionObject.transform.parent = questionLocation;
-
-        // Set answers selection
-        //answerATarget.material = answerAImages[currQuestion - 1].material;
-        //answerBTarget.material = answerBImages[currQuestion - 1].material;
-        //answerCTarget.material = answerCImages[currQuestion - 1].material;
-        //answerDTarget.material = answerDImages[currQuestion - 1].material;
     }
 
     // Fixed Update is called once per fixed time
@@ -94,20 +88,20 @@ public class Station1Manager : GameManager
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= questionObjects.Length)
+        if (currQuestion <= questionList.Length)
         {
             
             // Change question
             Destroy(questionObject);
-            questionObject = Instantiate(questionObjects[currQuestion - 1]);
+            questionObject = Instantiate(questionList[currQuestion - 1].questionObject);
             questionObject.transform.localPosition = questionLocation.localPosition;
             questionObject.transform.parent = questionLocation;
 
             // Change answers selection
-            answerATarget.material = answerAImages[currQuestion - 1].material;
-            answerBTarget.material = answerBImages[currQuestion - 1].material;
-            answerCTarget.material = answerCImages[currQuestion - 1].material;
-            answerDTarget.material = answerDImages[currQuestion - 1].material;
+            answerATarget.material = questionList[currQuestion - 1].choiceList[0].material;
+            answerBTarget.material = questionList[currQuestion - 1].choiceList[1].material;
+            answerCTarget.material = questionList[currQuestion - 1].choiceList[2].material;
+            answerDTarget.material = questionList[currQuestion - 1].choiceList[3].material;
         }
         else
         {
@@ -127,19 +121,19 @@ public class Station1Manager : GameManager
         currQuestion++;
 
         // Check array outta bound error
-        if (currQuestion <= questionObjects.Length)
+        if (currQuestion <= questionList.Length)
         {
             // Change question
             Destroy(questionObject);
-            questionObject = Instantiate(questionObjects[currQuestion - 1]);
+            questionObject = Instantiate(questionList[currQuestion - 1].questionObject);
             questionObject.transform.localPosition = questionLocation.localPosition;
             questionObject.transform.parent = questionLocation;
 
             // Change answers selection
-            answerATarget.material = answerAImages[currQuestion - 1].material;
-            answerBTarget.material = answerBImages[currQuestion - 1].material;
-            answerCTarget.material = answerCImages[currQuestion - 1].material;
-            answerDTarget.material = answerDImages[currQuestion - 1].material;
+            answerATarget.material = questionList[currQuestion - 1].choiceList[0].material;
+            answerBTarget.material = questionList[currQuestion - 1].choiceList[1].material;
+            answerCTarget.material = questionList[currQuestion - 1].choiceList[2].material;
+            answerDTarget.material = questionList[currQuestion - 1].choiceList[3].material;
         }
         else
         {
