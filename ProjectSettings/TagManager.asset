@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - projectile
-  - FxTemporaire
-  - bowling
-  - Soal_1
-  - Soal_2
-  - pA
-  - pB
-  - pC
-  - pD
-  - AnswerButton
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -23,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 
