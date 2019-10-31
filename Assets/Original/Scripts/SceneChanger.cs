@@ -8,7 +8,7 @@ public class SceneChanger : MonoBehaviour
     // This script is inteded to  t e l e p o r t  the player
     public void sceneToStation1()
     {
-        SceneManager.LoadScene("Lv 1");
+        SceneManager.LoadScene("Station 1");
     }
     public void sceneToStation3()
     {
