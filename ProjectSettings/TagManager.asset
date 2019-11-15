@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ExcludeTeleport
+  - Leg
+  - SnapCube
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - Torso
+  - Head
+  - Station2 - LifeBoat's Seat
+  - Station2 - Persona
   layers:
   - Default
   - TransparentFX
