@@ -9,7 +9,7 @@ public class PersonaCluster
     public GameObject person;
     public string name;
     public int age;
-    [TextArea(3,10)]public string description;
+    [TextArea(3, 10)] public string description;
     public Transform oriPosition;
 }
 
@@ -25,8 +25,10 @@ public class Station2Manager : GameManager
     [SerializeField] PersonaCluster[] personaClusters;
     [SerializeField] LifeBoat[] lifeBoats;
 
+    int[] personaSavedIndex;
+
     public bool isStationComplete = false;
-    private int score = 0;
+    private float score = 0;
 
     private float timePassed = 0;
     private float dueTime = 480;
@@ -34,6 +36,7 @@ public class Station2Manager : GameManager
     public SceneChanger sceneChanger;
     public Station2UI station2UI;
     private PersonaCluster tempCluster;
+
     // Fixed Update is called once per fixed time
     void FixedUpdate()
     {
@@ -64,6 +67,7 @@ public class Station2Manager : GameManager
     public void SelectPersona(int codePersona)
     {
         tempCluster = personaClusters[codePersona];
+
         station2UI.namePersona.text = "Nama : " + personaClusters[codePersona].name;
         station2UI.agePersona.text = "Umur : " + personaClusters[codePersona].age;
         station2UI.descPersona.text = "Deskripsi : " + personaClusters[codePersona].description;
@@ -97,6 +101,7 @@ public class Station2Manager : GameManager
 
             // Retrieve name info
             lifeBoats[priority].name = tempCluster.name;
+
             //lifeBoats[priority].name = station2UI.namePersona.text;
             //lifeBoats[priority].name = lifeBoats[priority].name.Remove(0, 7);
             Debug.Log("name: " + lifeBoats[priority].name);
@@ -123,6 +128,65 @@ public class Station2Manager : GameManager
             buffer += i + 1 +". " +lifeBoats[i].name +"\n";
 
         station2UI.lifeboatText.text = buffer;
+    }
+
+    public void CalculateScore()
+    {
+        float jawabanBenar = 0,
+            tempScore = 0;
+
+        // Get all the current persona on the lifeboat
+        for (int i = 0; i < lifeBoats.Length; i++)
+        {
+            for (int j = 0; j < personaClusters.Length; j++)
+            {
+                if (lifeBoats[i].name.Equals(personaClusters[j].name))
+                {
+                    personaSavedIndex[i] = j;
+                    break;
+                }
+            }
+        }
+
+        /* Correct answer, in order, and their indexes are :
+            Desi    [4], 
+            Cintami [3],
+            Budi    [2],
+            Ahmad   [1]. */
+        for (int i = 0; i < personaSavedIndex.Length; i++)
+        {
+            if (personaSavedIndex[i] == 4 ||
+                personaSavedIndex[i] == 3 ||
+                personaSavedIndex[i] == 2 ||
+                personaSavedIndex[i] == 1)
+                jawabanBenar++;
+
+            switch (i)
+            {
+                case 0:
+                    if (personaSavedIndex[i] == 4)
+                        tempScore += 10;
+                    break;
+                case 1:
+                    if (personaSavedIndex[i] == 3)
+                        tempScore += 5;
+                    break;
+                case 2:
+                    if (personaSavedIndex[i] == 2)
+                        tempScore += 2.5f;
+                    break;
+                case 3:
+                    if (personaSavedIndex[i] == 1)
+                        tempScore += 2.5f;
+                    break;
+            }
+        }
+
+        tempScore = tempScore + (jawabanBenar * 20);
+        Debug.Log("jawabanBenar: " + jawabanBenar +
+            " score" + tempScore);
+
+        score = tempScore;
     }
 
     public override void ReportNewScore()
