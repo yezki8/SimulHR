@@ -11,6 +11,7 @@ public class PersonaCluster
     public int age;
     [TextArea(3, 10)] public string description;
     public Transform oriPosition;
+    public int seatedAt;
 }
 
 [System.Serializable]
@@ -78,6 +79,7 @@ public class Station2Manager : GameManager
         // Priority on editor are set to 1,2,3, or 4
         priority--;
 
+        // HARUS udah ada persona yg dipilih. Baru bisa milih LifeBoat seat
         if (station2UI.namePersona.text.Equals("Nama : "))
         {
             Debug.Log("Click any of the personas first");
@@ -86,6 +88,10 @@ public class Station2Manager : GameManager
         {
             int indexPersona = 0;
 
+            /* Cases: If clicking to a seat but the seat's already taken by another persona. 
+             * Solution: Move the persona on the seat to original position,
+             *      then move currently selected personas to selected LifeBoat seat. 
+            */
             if (! lifeBoats[priority].name.Equals(""))
             {
                 // Cari index personanya sabaraha
@@ -96,25 +102,41 @@ public class Station2Manager : GameManager
                 // Move the persona to the original position
                 personaClusters[indexPersona].person.transform.position =
                     personaClusters[indexPersona].oriPosition.position;
+
+                // The persona are not seated anymore
+                personaClusters[indexPersona].seatedAt = 0;
             }
 
 
-            // Retrieve name info
-            lifeBoats[priority].name = tempCluster.name;
-
-            //lifeBoats[priority].name = station2UI.namePersona.text;
-            //lifeBoats[priority].name = lifeBoats[priority].name.Remove(0, 7);
-            Debug.Log("name: " + lifeBoats[priority].name);
-
             // Cari index personanya sabaraha
-            //indexPersona = 0;
             for (int i = 0; i < personaClusters.Length; i++)
                 if (lifeBoats[priority].name == personaClusters[i].name)
                     indexPersona = i;
 
+            /* Case: Persona already seated, and currently selected. But clicked to another seat
+             * Solution: remove name from lifeBoats.name and seatedAt from personaClusters.seatedAt
+            */
+            if (personaClusters[indexPersona].seatedAt != 0)
+            {
+                lifeBoats[priority].name = "";
+                personaClusters[indexPersona].seatedAt = 0;
+            }
+
+            /* Standard function protocol
+             */ 
+            // Retrieve name info
+            lifeBoats[priority].name = tempCluster.name;
+            Debug.Log("name: " + lifeBoats[priority].name);
+
             // Pindahin persona ke lifeboat
             personaClusters[indexPersona].person.transform.position =
                 lifeBoats[priority].seat.transform.position;
+
+            // Now the persona are seated
+            personaClusters[indexPersona].seatedAt = priority++;
+
+            // Time to stop the wavy-wavy-please-notice-me animation
+            // TO-DO: Switch the animator to idle-seating pose.
         }
         
         // Update List
@@ -149,10 +171,11 @@ public class Station2Manager : GameManager
         }
 
         /* Correct answer, in order, and their indexes are :
-            Desi    [4], 
-            Cintami [3],
-            Budi    [2],
-            Ahmad   [1]. */
+         *  Desi    [4], 
+         *  Cintami [3],
+         *  Budi    [2],
+         *  Ahmad   [1]. 
+         */
         for (int i = 0; i < personaSavedIndex.Length; i++)
         {
             if (personaSavedIndex[i] == 4 ||
