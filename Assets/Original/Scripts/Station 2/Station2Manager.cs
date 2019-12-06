@@ -26,7 +26,8 @@ public class Station2Manager : GameManager
     [SerializeField] PersonaCluster[] personaClusters;
     [SerializeField] LifeBoat[] lifeBoats;
 
-    int[] personaSavedIndex;
+    public int[] personaSavedIndex;
+    public Transform faceCamera;
 
     public bool isStationComplete = false;
     private float score = 0;
@@ -72,6 +73,8 @@ public class Station2Manager : GameManager
         station2UI.namePersona.text = "Nama : " + personaClusters[codePersona].name;
         station2UI.agePersona.text = "Umur : " + personaClusters[codePersona].age;
         station2UI.descPersona.text = "Deskripsi : " + personaClusters[codePersona].description;
+
+        UpdateFaceCamera();
     }
 
     public void SelectLifeBoat(int priority)
@@ -110,7 +113,7 @@ public class Station2Manager : GameManager
 
             // Cari index personanya sabaraha
             for (int i = 0; i < personaClusters.Length; i++)
-                if (lifeBoats[priority].name == personaClusters[i].name)
+                if (tempCluster.name == personaClusters[i].name)
                     indexPersona = i;
 
             /* Case: Persona already seated, and currently selected. But clicked to another seat
@@ -118,7 +121,7 @@ public class Station2Manager : GameManager
             */
             if (personaClusters[indexPersona].seatedAt != 0)
             {
-                lifeBoats[priority].name = "";
+                lifeBoats[personaClusters[indexPersona].seatedAt].name = "";
                 personaClusters[indexPersona].seatedAt = 0;
             }
 
@@ -132,8 +135,9 @@ public class Station2Manager : GameManager
             personaClusters[indexPersona].person.transform.position =
                 lifeBoats[priority].seat.transform.position;
 
-            // Now the persona are seated
+            // Now the persona are seated and update the camera
             personaClusters[indexPersona].seatedAt = priority++;
+            UpdateFaceCamera();
 
             // Time to stop the wavy-wavy-please-notice-me animation
             // TO-DO: Switch the animator to idle-seating pose.
@@ -212,6 +216,22 @@ public class Station2Manager : GameManager
         score = tempScore;
     }
 
+    public void EndEarly()
+    {
+        isStationComplete = true;
+        StationEnds();
+    }
+
+    private void UpdateFaceCamera()
+    {
+        float personaX = tempCluster.person.transform.position.x;
+        float personaY = tempCluster.person.transform.position.y;
+        float personaZ = tempCluster.person.transform.position.z;
+        personaX -= 1.66f;
+
+        faceCamera.position = new Vector3(personaX, personaY, personaZ);
+    }
+
     public override void ReportNewScore()
     {
         // Buat nyimpen soal di GameManager utama
@@ -220,6 +240,8 @@ public class Station2Manager : GameManager
 
     public void StationEnds()
     {
+        CalculateScore();
+
         Debug.Log("Station End. Score: " + score + ". Time left: " + (dueTime - timePassed));
 
         station2UI.showScore(score);

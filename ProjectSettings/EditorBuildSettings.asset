@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Original/Scenes/Introduction - VRTK Test.unity
+    path: Assets/Original/Scenes/Introduction.unity
     guid: b12f5fb193d6e9342b4d876b6b0fcbec
   - enabled: 1
     path: Assets/Original/Scenes/Station 1.unity
     guid: 82b59c11fab5e1d44a4b543155bdb672
+  - enabled: 1
+    path: Assets/Original/Scenes/Station 2.unity
+    guid: 3fe3fd6b3c6c8bf41846d76a10054117
   - enabled: 1
     path: Assets/Original/Scenes/Station 3.unity
     guid: 14bdee9c185da2f488a339b76aef189a
