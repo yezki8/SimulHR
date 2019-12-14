@@ -12,7 +12,9 @@ public class PersonaCluster
     [TextArea(3, 10)] public string description;
     public Transform oriPosition;
     public int seatedAt;
+   
 }
+//Animator anim;
 
 [System.Serializable]
 public class LifeBoat
@@ -38,6 +40,11 @@ public class Station2Manager : GameManager
     public SceneChanger sceneChanger;
     public Station2UI station2UI;
     private PersonaCluster tempCluster;
+
+    private void Start()
+    {
+        //anim = GetComponent<Animator>();
+    }
 
     // Fixed Update is called once per fixed time
     void FixedUpdate()
@@ -141,6 +148,7 @@ public class Station2Manager : GameManager
 
             // Time to stop the wavy-wavy-please-notice-me animation
             // TO-DO: Switch the animator to idle-seating pose.
+
         }
         
         // Update List
