@@ -12,68 +12,72 @@ public class Station4Manager : GameManager
     public bool isCurrQuestionStarted = false;
     private int currQuestion = 0;
 
+    private bool lateEnd = false;
+    public string[] clearanceStatus = new string[3];
+
     public SceneChanger sceneChanger;
     public Station4UI station4UI;
 
-    void Start()
-    {
-        
-    }
-
-    // Fixed Update is called once per fixed time
     void FixedUpdate()
     {
-        // run the timer
+        // run the timer only if the question already started
         if (isCurrQuestionStarted)
         {
             timePassed += Time.deltaTime;
-            station4UI.timeText.text = timePassedString(); 
+            station4UI.timeText.text = TimePassedString(); 
 
+            // if time runs dead
             if (timePassed >= dueTime[currQuestion])
             {
-                endQuestion();
+                lateEnd = true;
+                EndQuestion();
             }
         }
     }
 
-    public void startQuestion()
+    public void StartQuestion()
     {
         isCurrQuestionStarted = true;
     }
 
-    public void endQuestion()
+    public void EndQuestion()
     {
+        // Write report
+        if (lateEnd)
+            clearanceStatus[currQuestion] = "Late";
+        else
+            clearanceStatus[currQuestion] = "Time taken " + TimePassedString();
+
+        // Reset status
+        lateEnd = false;
         isCurrQuestionStarted = false;
         timePassed = 0;
+
+        // Advance
         if ((currQuestion + 1) < dueTime.Length)
-        {
             currQuestion++;
-        }
         else 
-            stationEnds();
+            StationEnds();
     }
 
-    public string timePassedString(){
-        int sec = (int) timePassed % 60,
-            min = (int) timePassed / 60,
-            hour = (int) timePassed / 3600;
+    public string TimePassedString(){
+        int sec = (int)timePassed % 60,
+            min = (int)timePassed / 60;
 
-        return (min +":" +sec);
+        return (min + ":" + sec);
     }
 
     public override void ReportNewScore()
     {
         // Buat nyimpen soal di ProgressCache utama
-        ProgressCache.Instance.ReportNewValue(score);
+        // ProgressCache.Instance.ReportNewValue(score);
     }
 
-    public void stationEnds()
+    public void StationEnds()
     {
         Debug.Log("Station 4 End. Time left: " );
 
         ReportNewScore();
-
-        //sceneChanger.sceneToIntro();
 
         // To-do: Bikin kata2 selamatnya
     }
