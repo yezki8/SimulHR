@@ -26,6 +26,7 @@ public class AnswerButton3 : MonoBehaviour
         {
             Debug.Log(outputOnMax);
         }
+        Answered();
     }
 
     protected virtual void MinLimitReached(object sender, ControllableEventArgs e)
@@ -49,18 +50,19 @@ public class AnswerButton3 : MonoBehaviour
         }
         else
         {
-            if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
-            {
-                Debug.Log("C o r r e c t !");
-                station3Manager.SelectCorrectAnswer();
-            }
-            else
-            {
-                Debug.Log("answerFor: " + answerFor + ", correctAnswer: " + station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1]);
-                Debug.Log("I n c o r r e c t !");
-                station3Manager.SelectIncorrectAnswer();
-            }
+            if (station3Manager.getCurrQuestion() + 1 < station3Manager.correctAnswer.Length)
+                if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
+                {
+                    Debug.Log("C o r r e c t !");
+                    station3Manager.SelectCorrectAnswer();
+                }
+                else
+                {
+                    Debug.Log("answerFor: " + answerFor + ", correctAnswer: " + station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1]);
+                    Debug.Log("I n c o r r e c t !");
+                    station3Manager.SelectIncorrectAnswer();
+                }
         }
-        
+
     }
 }
