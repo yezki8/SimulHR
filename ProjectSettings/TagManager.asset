@@ -4,16 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - projectile
-  - FxTemporaire
-  - bowling
-  - Soal_1
-  - Soal_2
-  - pA
-  - pB
-  - pC
-  - pD
-  - AnswerButton
+  - ExcludeTeleport
+  - Leg
+  - SnapCube
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - Torso
+  - Head
+  - Station2 - LifeBoat's Seat
+  - Station2 - Persona
   layers:
   - Default
   - TransparentFX
@@ -23,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 

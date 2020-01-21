@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class SceneChanger : MonoBehaviour
 {
-    // This script is inteded to  t e l e p o r t  the player
-    public void sceneToStation1()
-    {
-        SceneManager.LoadScene("Lv 1");
-    }
-    public void sceneToStation3()
-    {
-        SceneManager.LoadScene("Station 3");
-    }
-
+    // This script is inteded to  t e l e p o r t  the player across scenes
     public void sceneToIntro()
     {
         SceneManager.LoadScene("Introduction");
+    }
+
+    public void sceneTo(string sceneName)
+    {
+        try
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        catch
+        {
+            Debug.LogError("Error when changing scene using func sceneTo()");
+        }
     }
 
     public void sceneExit()

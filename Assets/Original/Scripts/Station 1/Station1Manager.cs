@@ -105,11 +105,7 @@ public class Station1Manager : GameManager
         }
         else
         {
-            Destroy(questionObject);
-            Destroy(answerATarget);
-            Destroy(answerBTarget);
-            Destroy(answerCTarget);
-            Destroy(answerDTarget);
+            //stationEnds();
             
         }
     }
@@ -137,11 +133,7 @@ public class Station1Manager : GameManager
         }
         else
         {
-            Destroy(questionObject);
-            Destroy(answerATarget);
-            Destroy(answerBTarget);
-            Destroy(answerCTarget);
-            Destroy(answerDTarget);
+            //stationEnds();
         }
     }
 
@@ -155,7 +147,6 @@ public class Station1Manager : GameManager
         Debug.Log("Station 1 End. Score: " + score + ". Time left: " + (dueTime - timePassed));
 
         Destroy(questionObject);
-        Destroy(questionLocation);
         Destroy(answerATarget.gameObject);
         Destroy(answerBTarget.gameObject);
         Destroy(answerCTarget.gameObject);

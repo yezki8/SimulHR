@@ -1,24 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using VRTK.Controllables;
 
 public class AnswerButton3 : MonoBehaviour
 {
+    public VRTK_BaseControllable controllable;
+    public string outputOnMax = "Maximum Reached";
+    public string outputOnMin = "Minimum Reached";
+
     public Manage station3Manager;
     public Station3UI station3UI;
     public char answerFor;
 
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void OnEnable()
     {
-        
+        controllable = (controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable);
+        // controllable.ValueChanged += ValueChanged;
+        controllable.MaxLimitReached += MaxLimitReached;
+        controllable.MinLimitReached += MinLimitReached;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void MaxLimitReached(object sender, ControllableEventArgs e)
     {
-        
+        if (outputOnMax != "")
+        {
+            Debug.Log(outputOnMax);
+        }
+        Answered();
+    }
+
+    protected virtual void MinLimitReached(object sender, ControllableEventArgs e)
+    {
+        if (outputOnMin != "")
+        {
+            Debug.Log(outputOnMin);
+        }
     }
 
     public void Answered()
@@ -34,18 +50,19 @@ public class AnswerButton3 : MonoBehaviour
         }
         else
         {
-            if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
-            {
-                Debug.Log("C o r r e c t !");
-                station3Manager.SelectCorrectAnswer();
-            }
-            else
-            {
-                Debug.Log("answerFor: " + answerFor + ", correctAnswer: " + station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1]);
-                Debug.Log("I n c o r r e c t !");
-                station3Manager.SelectIncorrectAnswer();
-            }
+            if (station3Manager.getCurrQuestion() + 1 < station3Manager.correctAnswer.Length)
+                if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
+                {
+                    Debug.Log("C o r r e c t !");
+                    station3Manager.SelectCorrectAnswer();
+                }
+                else
+                {
+                    Debug.Log("answerFor: " + answerFor + ", correctAnswer: " + station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1]);
+                    Debug.Log("I n c o r r e c t !");
+                    station3Manager.SelectIncorrectAnswer();
+                }
         }
-        
+
     }
 }
