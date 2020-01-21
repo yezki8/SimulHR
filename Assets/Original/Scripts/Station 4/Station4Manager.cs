@@ -27,12 +27,13 @@ public class Station4Manager : GameManager
         if (isCurrQuestionStarted)
         {
             timePassed += Time.deltaTime;
-        }
-        else if (timePassed >= dueTime[currQuestion])
-        {
-            endQuestion();
-        }
+            station4UI.timeText.text = timePassedString(); 
 
+            if (timePassed >= dueTime[currQuestion])
+            {
+                endQuestion();
+            }
+        }
     }
 
     public void startQuestion()
@@ -48,19 +49,29 @@ public class Station4Manager : GameManager
         {
             currQuestion++;
         }
+        else 
+            stationEnds();
+    }
+
+    public string timePassedString(){
+        int sec = (int) timePassed % 60,
+            min = (int) timePassed / 60,
+            hour = (int) timePassed / 3600;
+
+        return (min +":" +sec);
     }
 
     public override void ReportNewScore()
     {
-        // Buat nyimpen soal di GameManager utama
-        // ProgressCache.Instance.ReportNewValue(score);
+        // Buat nyimpen soal di ProgressCache utama
+        ProgressCache.Instance.ReportNewValue(score);
     }
 
     public void stationEnds()
     {
         Debug.Log("Station 4 End. Time left: " );
 
-        //ReportNewScore();
+        ReportNewScore();
 
         //sceneChanger.sceneToIntro();
 

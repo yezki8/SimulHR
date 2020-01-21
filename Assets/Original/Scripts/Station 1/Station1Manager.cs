@@ -77,7 +77,7 @@ public class Station1Manager : GameManager
 
     public override void ReportNewScore()
     {
-        // Buat nyimpen soal di GameManager utama
+        // Buat nyimpen soal di ProgressCache utama
         ProgressCache.Instance.ReportNewValue(score);
     }
 
