@@ -4,21 +4,18 @@ VR-PAT merupakan aplikasi VR yang dirancang untuk melakukan pengukuran kemampuan
 
 ## Program Used
 
-Unity 2018.3.14f1
-Blender
+Unity 2018.3.14f1 </br>
+Blender </br>
 
+## Setting up
 
-## Setting up on your locals
-
-Follow these steps to run this Project on your local computer
-
+Follow these steps to run this Project on your local </br>
 Prerequisites:
 1. Unity 2018.3.14f1
 2. SteamVR from Steam
 
-Steps:
-1. Navigate to a folder of your choice, right click Git Bash
-2. git clone https://github.com/yezki8/SimulHR
+And then clone this project. </br>
+Voila, you're good as done. 
 
 ## Documentations
 
@@ -30,14 +27,10 @@ Steps:
 
 ## About
 
-**Kevin Andrew A A J W** - [Github](https://github.com/RaihanAk)
-
-**Muhammad Raihan Akbar** - [RaihanAk](https://github.com/RaihanAk)
-
-**Muhammad Jordiansyah** - [Github](https://github.com/RaihanAk)
-
-**Yehezkiel Yosua Parlindungan** - [yezki8](https://github.com/yezki8/)
-
-**Syafira Fitra Annisa** - [Github](https://github.com/RaihanAk)
+**Kevin Andrew A A J W** - [KEVIN2912](https://github.com/KEVIN2912) </br>
+**Muhammad Raihan Akbar** - [RaihanAk](https://github.com/RaihanAk) </br>
+**Muhammad Jordiansyah** </br>
+**Yehezkiel Yosua Parlindungan** - [yezki8](https://github.com/yezki8/) </br>
+**Syafira Fitra Annisa** - [SyafiraFitraAnnisa](https://github.com/SyafiraFitraAnnisa) </br>
 
 Unpad - OmniVR
