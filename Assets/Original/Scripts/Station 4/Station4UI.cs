@@ -10,16 +10,10 @@ public class Station4UI : MonoBehaviour
     public bool isInstructionComplete = false;
 
     //kumpulan text
-    public Text txtPlaceholder;
+    public Text timeText;
 
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
