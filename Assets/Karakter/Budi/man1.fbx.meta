@@ -162,7 +162,12 @@ ModelImporter:
     7400004: Bip01|talk
     9500000: //RootNode
     13700000: casual09_m_highpoly
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: f086d620f98aa7b499e174b9762509df, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
