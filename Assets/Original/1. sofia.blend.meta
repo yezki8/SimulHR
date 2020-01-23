@@ -29,6 +29,41 @@ ModelImporter:
     100046: Camera01_Target
     100048: Camera01_Target_001
     100050: casual08_f_highpoly
+    100052: Bip01 Footsteps
+    100054: Bone.001
+    100056: Bone.002
+    100058: Bone.003
+    100060: Bone.004
+    100062: Bone.005
+    100064: Bone.006
+    100066: Bone.007
+    100068: Bone.007_end
+    100070: Bone.008
+    100072: Bone.008_end
+    100074: Bone.009
+    100076: Bone.010
+    100078: Bone.010_end
+    100080: Bone.011
+    100082: Bone.011_end
+    100084: Bone.012
+    100086: Bone.012_end
+    100088: Bone.013
+    100090: Bone.014
+    100092: Bone.015
+    100094: Bone.015_end
+    100096: Bone.016
+    100098: Bone.016_end
+    100100: Bone.017
+    100102: Bone.018
+    100104: Bone.018_end
+    100106: Bone.020
+    100108: Bone.020_end
+    100110: Camera01
+    100112: Camera01.001
+    100114: Camera01.Target
+    100116: Camera01.Target.001
+    100118: senyum
+    100120: senyum_end
     400000: //RootNode
     400002: Armature
     400004: Bip01_Footsteps
@@ -55,8 +90,47 @@ ModelImporter:
     400046: Camera01_Target
     400048: Camera01_Target_001
     400050: casual08_f_highpoly
+    400052: Bip01 Footsteps
+    400054: Bone.001
+    400056: Bone.002
+    400058: Bone.003
+    400060: Bone.004
+    400062: Bone.005
+    400064: Bone.006
+    400066: Bone.007
+    400068: Bone.007_end
+    400070: Bone.008
+    400072: Bone.008_end
+    400074: Bone.009
+    400076: Bone.010
+    400078: Bone.010_end
+    400080: Bone.011
+    400082: Bone.011_end
+    400084: Bone.012
+    400086: Bone.012_end
+    400088: Bone.013
+    400090: Bone.014
+    400092: Bone.015
+    400094: Bone.015_end
+    400096: Bone.016
+    400098: Bone.016_end
+    400100: Bone.017
+    400102: Bone.018
+    400104: Bone.018_end
+    400106: Bone.020
+    400108: Bone.020_end
+    400110: Camera01
+    400112: Camera01.001
+    400114: Camera01.Target
+    400116: Camera01.Target.001
+    400118: senyum
+    400120: senyum_end
+    2000000: Camera01
+    2000002: Camera01.001
     2100000: body__ok_jpg
     2100002: hair_transparent__Map__19
+    2100004: body
+    2100006: hair_transparent
     4300000: casual08_f_highpoly
     7400000: Default Take
     7400002: sofia0
@@ -73,6 +147,68 @@ ModelImporter:
     7400024: sofia7
     7400026: sofia8
     7400028: sofia9
+    7400030: Armature|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400032: Armature|Bip01 Footsteps|Take 001|BaseLayer
+    7400034: Armature|Bip01|Take 001|BaseLayer
+    7400036: Armature|Bip01|Take 001|BaseLayer.001
+    7400038: Armature|Camera01.001|Take 001|BaseLayer
+    7400040: Armature|Camera01.Target.001|Take 001|BaseLayer
+    7400042: Armature|Camera01.Target|Take 001|BaseLayer
+    7400044: Armature|Camera01|Take 001|BaseLayer
+    7400046: Armature|sofia0
+    7400048: Armature|sofia1
+    7400050: Armature|sofia10
+    7400052: Armature|sofia11
+    7400054: Armature|sofia12
+    7400056: Armature|sofia13
+    7400058: Armature|sofia2
+    7400060: Armature|sofia3
+    7400062: Armature|sofia4
+    7400064: Armature|sofia5
+    7400066: Armature|sofia6
+    7400068: Armature|sofia7
+    7400070: Armature|sofia8
+    7400072: Armature|sofia9
+    7400074: Camera01.Target.001|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400076: Camera01.Target.001|Bip01 Footsteps|Take 001|BaseLayer
+    7400078: Camera01.Target.001|Bip01|Take 001|BaseLayer
+    7400080: Camera01.Target.001|Bip01|Take 001|BaseLayer.001
+    7400082: Camera01.Target.001|Camera01.001|Take 001|BaseLayer
+    7400084: Camera01.Target.001|Camera01.Target.001|Take 001|BaseLayer
+    7400086: Camera01.Target.001|Camera01.Target|Take 001|BaseLayer
+    7400088: Camera01.Target.001|Camera01|Take 001|BaseLayer
+    7400090: Camera01.001|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400092: Camera01.001|Bip01 Footsteps|Take 001|BaseLayer
+    7400094: Camera01.001|Bip01|Take 001|BaseLayer
+    7400096: Camera01.001|Bip01|Take 001|BaseLayer.001
+    7400098: Camera01.001|Camera01.001|Take 001|BaseLayer
+    7400100: Camera01.001|Camera01.Target.001|Take 001|BaseLayer
+    7400102: Camera01.001|Camera01.Target|Take 001|BaseLayer
+    7400104: Camera01.001|Camera01|Take 001|BaseLayer
+    7400106: Bip01 Footsteps|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400108: Bip01 Footsteps|Bip01 Footsteps|Take 001|BaseLayer
+    7400110: Bip01 Footsteps|Bip01|Take 001|BaseLayer
+    7400112: Bip01 Footsteps|Bip01|Take 001|BaseLayer.001
+    7400114: Bip01 Footsteps|Camera01.001|Take 001|BaseLayer
+    7400116: Bip01 Footsteps|Camera01.Target.001|Take 001|BaseLayer
+    7400118: Bip01 Footsteps|Camera01.Target|Take 001|BaseLayer
+    7400120: Bip01 Footsteps|Camera01|Take 001|BaseLayer
+    7400122: Camera01.Target|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400124: Camera01.Target|Bip01 Footsteps|Take 001|BaseLayer
+    7400126: Camera01.Target|Bip01|Take 001|BaseLayer
+    7400128: Camera01.Target|Bip01|Take 001|BaseLayer.001
+    7400130: Camera01.Target|Camera01.001|Take 001|BaseLayer
+    7400132: Camera01.Target|Camera01.Target.001|Take 001|BaseLayer
+    7400134: Camera01.Target|Camera01.Target|Take 001|BaseLayer
+    7400136: Camera01.Target|Camera01|Take 001|BaseLayer
+    7400138: Camera01|Bip01 Footsteps.001|Take 001|BaseLayer
+    7400140: Camera01|Bip01 Footsteps|Take 001|BaseLayer
+    7400142: Camera01|Bip01|Take 001|BaseLayer
+    7400144: Camera01|Bip01|Take 001|BaseLayer.001
+    7400146: Camera01|Camera01.001|Take 001|BaseLayer
+    7400148: Camera01|Camera01.Target.001|Take 001|BaseLayer
+    7400150: Camera01|Camera01.Target|Take 001|BaseLayer
+    7400152: Camera01|Camera01|Take 001|BaseLayer
     9500000: //RootNode
     13700000: casual08_f_highpoly
   externalObjects: {}

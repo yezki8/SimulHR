@@ -4,14 +4,25 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Circle
+    100006: Lamp
     400000: //RootNode
+    400002: Camera
+    400004: Circle
+    400006: Lamp
+    2000000: Camera
     2100000: Material_001
     2100002: merah
+    2100004: Material.001
     2300000: //RootNode
+    2300002: Circle
     3300000: //RootNode
+    3300002: Circle
     4300000: Circle
     7400000: Default Take
     9500000: //RootNode
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1

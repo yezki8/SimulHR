@@ -15,6 +15,15 @@ ModelImporter:
     100018: Cylinder_002
     100020: Cylinder_003
     100022: //RootNode
+    100024: Camera
+    100026: Cube.001
+    100028: Cube.002
+    100030: Cube.003
+    100032: Cube.004
+    100034: Cylinder.001
+    100036: Cylinder.002
+    100038: Cylinder.003
+    100040: Lamp
     400000: BezierCurve
     400002: BezierCurve_001
     400004: Cube
@@ -27,10 +36,23 @@ ModelImporter:
     400018: Cylinder_002
     400020: Cylinder_003
     400022: //RootNode
+    400024: Camera
+    400026: Cube.001
+    400028: Cube.002
+    400030: Cube.003
+    400032: Cube.004
+    400034: Cylinder.001
+    400036: Cylinder.002
+    400038: Cylinder.003
+    400040: Lamp
+    2000000: Camera
     2100000: Material_003
     2100002: Material
     2100004: Material_002
     2100006: Material_001
+    2100008: Material.003
+    2100010: Material.002
+    2100012: Material.001
     2300000: BezierCurve
     2300002: BezierCurve_001
     2300004: Cube
@@ -42,6 +64,13 @@ ModelImporter:
     2300016: Cylinder_001
     2300018: Cylinder_002
     2300020: Cylinder_003
+    2300022: Cube.001
+    2300024: Cube.002
+    2300026: Cube.003
+    2300028: Cube.004
+    2300030: Cylinder.001
+    2300032: Cylinder.002
+    2300034: Cylinder.003
     3300000: BezierCurve
     3300002: BezierCurve_001
     3300004: Cube
@@ -53,6 +82,13 @@ ModelImporter:
     3300016: Cylinder_001
     3300018: Cylinder_002
     3300020: Cylinder_003
+    3300022: Cube.001
+    3300024: Cube.002
+    3300026: Cube.003
+    3300028: Cube.004
+    3300030: Cylinder.001
+    3300032: Cylinder.002
+    3300034: Cylinder.003
     4300000: Cylinder_003
     4300002: Cylinder_002
     4300004: Cylinder_001
@@ -64,8 +100,16 @@ ModelImporter:
     4300016: Cube_002
     4300018: Cube_001
     4300020: Cube
+    4300022: Cylinder.003
+    4300024: Cylinder.002
+    4300026: Cylinder.001
+    4300028: Cube.004
+    4300030: Cube.003
+    4300032: Cube.002
+    4300034: Cube.001
     7400000: Default Take
     9500000: //RootNode
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
