@@ -12,9 +12,10 @@ public class PersonaCluster
     [TextArea(3, 10)] public string description;
     public Transform oriPosition;
     public int seatedAt;
+    public Animator animasi;
    
 }
-//Animator anim;
+
 
 [System.Serializable]
 public class LifeBoat
@@ -40,11 +41,8 @@ public class Station2Manager : GameManager
     public SceneChanger sceneChanger;
     public Station2UI station2UI;
     private PersonaCluster tempCluster;
+   
 
-    private void Start()
-    {
-        //anim = GetComponent<Animator>();
-    }
 
     // Fixed Update is called once per fixed time
     void FixedUpdate()
@@ -112,6 +110,7 @@ public class Station2Manager : GameManager
                 // Move the persona to the original position
                 personaClusters[indexPersona].person.transform.position =
                     personaClusters[indexPersona].oriPosition.position;
+                personaClusters[indexPersona].animasi.SetInteger("Kondisi", 0);
 
                 // The persona are not seated anymore
                 personaClusters[indexPersona].seatedAt = 0;
@@ -140,7 +139,7 @@ public class Station2Manager : GameManager
 
             // Pindahin persona ke lifeboat
             personaClusters[indexPersona].person.transform.position =
-                lifeBoats[priority].seat.transform.position;
+                lifeBoats[priority].seat.transform.position;    
 
             // Now the persona are seated and update the camera
             personaClusters[indexPersona].seatedAt = priority++;
@@ -148,6 +147,8 @@ public class Station2Manager : GameManager
 
             // Time to stop the wavy-wavy-please-notice-me animation
             // TO-DO: Switch the animator to idle-seating pose.
+            personaClusters[indexPersona].animasi.SetInteger("Kondisi", 1);
+           
 
         }
         
