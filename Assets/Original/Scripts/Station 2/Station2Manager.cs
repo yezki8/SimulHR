@@ -11,9 +11,9 @@ public class PersonaCluster
     public int age;
     [TextArea(3, 10)] public string description;
     public Transform oriPosition;
+    public Transform camPostition;
     public int seatedAt;
     public Animator animasi;
-   
 }
 
 
@@ -110,6 +110,8 @@ public class Station2Manager : GameManager
                 // Move the persona to the original position
                 personaClusters[indexPersona].person.transform.position =
                     personaClusters[indexPersona].oriPosition.position;
+                personaClusters[indexPersona].person.transform.rotation =
+                    personaClusters[indexPersona].oriPosition.rotation;
                 personaClusters[indexPersona].animasi.SetInteger("Kondisi", 0);
 
                 // The persona are not seated anymore
@@ -139,7 +141,9 @@ public class Station2Manager : GameManager
 
             // Pindahin persona ke lifeboat
             personaClusters[indexPersona].person.transform.position =
-                lifeBoats[priority].seat.transform.position;    
+                lifeBoats[priority].seat.transform.position;
+            personaClusters[indexPersona].person.transform.rotation =
+                lifeBoats[priority].seat.transform.localRotation;
 
             // Now the persona are seated and update the camera
             personaClusters[indexPersona].seatedAt = priority++;
@@ -233,12 +237,15 @@ public class Station2Manager : GameManager
 
     private void UpdateFaceCamera()
     {
-        float personaX = tempCluster.person.transform.position.x;
-        float personaY = tempCluster.person.transform.position.y;
-        float personaZ = tempCluster.person.transform.position.z;
-        personaX -= 1.66f;
+        faceCamera.position = tempCluster.camPostition.transform.position;
+        faceCamera.rotation = tempCluster.camPostition.transform.rotation;
 
-        faceCamera.position = new Vector3(personaX, personaY, personaZ);
+        //float personaX = tempCluster.person.transform.position.x;
+        //float personaY = tempCluster.person.transform.position.y;
+        //float personaZ = tempCluster.person.transform.position.z;
+        //personaX -= 1.66f;
+
+        //faceCamera.position = new Vector3(personaX, personaY, personaZ);
     }
 
     public override void ReportNewScore()
