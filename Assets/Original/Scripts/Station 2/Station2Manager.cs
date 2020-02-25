@@ -239,13 +239,6 @@ public class Station2Manager : GameManager
     {
         faceCamera.position = tempCluster.camPostition.transform.position;
         faceCamera.rotation = tempCluster.camPostition.transform.rotation;
-
-        //float personaX = tempCluster.person.transform.position.x;
-        //float personaY = tempCluster.person.transform.position.y;
-        //float personaZ = tempCluster.person.transform.position.z;
-        //personaX -= 1.66f;
-
-        //faceCamera.position = new Vector3(personaX, personaY, personaZ);
     }
 
     public override void ReportNewScore()
