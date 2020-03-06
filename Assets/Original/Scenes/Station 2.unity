@@ -1541,8 +1541,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121543065}
-  m_LocalRotation: {x: -0.027715037, y: 0.97076726, z: 0.13869381, w: 0.19392507}
-  m_LocalPosition: {x: -10.216364, y: -1.0467076, z: -5.3333893}
+  m_LocalRotation: {x: -0.31772432, y: 0.060458742, z: 0.020305177, w: 0.9460358}
+  m_LocalPosition: {x: -9.810556, y: -4.0789795, z: -9.263489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1533789405}
@@ -11089,7 +11089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.754717, g: 0.046279836, b: 0.046279836, a: 0}
+  touchHighlight: {r: 0, g: 0.8773585, b: 0.5552298, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
@@ -13889,7 +13889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.754717, g: 0.046279836, b: 0.046279836, a: 0}
+  touchHighlight: {r: 0, g: 0.8784314, b: 0.5568628, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
@@ -16705,7 +16705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.754717, g: 0.046279836, b: 0.046279836, a: 0}
+  touchHighlight: {r: 0, g: 0.8784314, b: 0.5568628, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
@@ -23953,10 +23953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0.8679245, g: 0.15966538, b: 0.15966538, a: 0}
-  touchHighlight: {r: 0.8301887, g: 0.3563546, b: 0.3563546, a: 0}
-  grabHighlight: {r: 0.6320754, g: 0.28920433, b: 0.28920433, a: 0}
-  useHighlight: {r: 0.8396226, g: 0.1782218, b: 0.72871906, a: 0}
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.4392157, g: 0, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
@@ -37824,7 +37824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.754717, g: 0.046279836, b: 0.046279836, a: 0}
+  touchHighlight: {r: 0, g: 0.8784314, b: 0.5568628, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
