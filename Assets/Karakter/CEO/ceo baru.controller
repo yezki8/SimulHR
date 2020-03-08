@@ -9,13 +9,13 @@ AnimatorController:
   m_Name: ceo baru
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: bicara 2
+  - m_Name: bicara
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: duduk dengar
+  - m_Name: mendengarkan
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -55,7 +55,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: heran
@@ -86,7 +86,7 @@ AnimatorStateTransition:
     m_ConditionEvent: heran
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102382916870502210}
@@ -111,7 +111,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: lirik
@@ -139,10 +139,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: bicara 2
+    m_ConditionEvent: bicara
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102185722846537924}
@@ -167,10 +167,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bicara 2
+    m_ConditionEvent: bicara
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102550001342530124}
@@ -198,7 +198,7 @@ AnimatorStateTransition:
     m_ConditionEvent: lirik
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: duduk dengar
+    m_ConditionEvent: mendengarkan
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102247115018448578}

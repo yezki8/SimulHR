@@ -9,14 +9,23 @@ public class Station4Manager : GameManager
     private float timePassed = 0;
 
     public bool isStationComplete = false;
+
     public bool isCurrQuestionStarted = false;
-    private int currQuestion = 0;
+    public int currQuestion = 0;
+    [TextArea(3, 10)] public string[] questionList;
+
+    public Animator ceo;
 
     private bool lateEnd = false;
     public string[] clearanceStatus = new string[3];
 
     public SceneChanger sceneChanger;
     public Station4UI station4UI;
+
+    private void Start()
+    {
+        StartQuestion();
+    }
 
     void FixedUpdate()
     {
@@ -38,6 +47,12 @@ public class Station4Manager : GameManager
     public void StartQuestion()
     {
         isCurrQuestionStarted = true;
+        ceo.SetBool("bicara", true);
+
+        station4UI.ShowQuestion();
+
+        // Wait for 5 seconds to stop "bicara", then shift animation to listening
+        StartCoroutine(ListeningAnimation());
     }
 
     public void EndQuestion()
@@ -58,6 +73,31 @@ public class Station4Manager : GameManager
             currQuestion++;
         else 
             StationEnds();
+    }
+
+    IEnumerator ListeningAnimation()
+    {
+        yield return new WaitForSeconds(5);
+
+        // Ceo stops talking
+        ceo.SetBool("bicara", false);
+        // Starts listening
+        ceo.SetBool("mendengarkan", true);
+
+        if (currQuestion == 2)
+        {
+            // Di pertanyaan 3: Ceo nya heran sama jawabannya
+            ceo.SetBool("heran", true);
+        }
+        else if (currQuestion == 1)
+        {
+            // Di pertanyaan 2: ceo nya lirik2 ke luar
+            ceo.SetBool("lirik", true);
+
+            yield return new WaitForSeconds(5);
+
+            ceo.SetBool("mendengarkan", true);
+        }
     }
 
     public string TimePassedString(){

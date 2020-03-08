@@ -10,13 +10,13 @@ public class Station4UI : MonoBehaviour
     public bool isInstructionComplete = false;
 
     //kumpulan text
-    public Text timeText;
+    public Text questionText,
+        timeText;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ShowQuestion()
     {
-        
-    }
+        questionText.text = station4Manager.questionList[station4Manager.currQuestion];
+    }    
 
     public void SetInstructionComplete()
     {
