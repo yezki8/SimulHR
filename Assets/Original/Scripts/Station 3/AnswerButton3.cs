@@ -8,7 +8,7 @@ public class AnswerButton3 : MonoBehaviour
     public string outputOnMax = "Maximum Reached";
     public string outputOnMin = "Minimum Reached";
 
-    public Manage station3Manager;
+    public Station3Manager station3Manager;
     public Station3UI station3UI;
     public char answerFor;
 
@@ -50,7 +50,7 @@ public class AnswerButton3 : MonoBehaviour
         }
         else
         {
-            if (station3Manager.getCurrQuestion() + 1 < station3Manager.correctAnswer.Length)
+            if (station3Manager.getCurrQuestion() < station3Manager.correctAnswer.Length)
                 if (answerFor == station3Manager.correctAnswer[station3Manager.getCurrQuestion() - 1])
                 {
                     Debug.Log("C o r r e c t !");

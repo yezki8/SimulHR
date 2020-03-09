@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Station3UI : MonoBehaviour
 {
-    public Manage station3Manager;
+    public Station3Manager station3Manager;
     
     public GameObject ButtonYes;
     public GameObject ButtonNo;
@@ -20,7 +20,7 @@ public class Station3UI : MonoBehaviour
     public Text txtNomor;
 
     public GameObject NextButton;
-    public GameObject Introduction;
+    public GameObject NextStationButton;
 
     int TutorialText = 1;
 
@@ -56,7 +56,7 @@ public class Station3UI : MonoBehaviour
             txtSoalKiri.text = ("Dari 30 soal");
             Destroy(ButtonYes.gameObject);
             Destroy(ButtonNo.gameObject);
-            Introduction.SetActive(true);
+            NextStationButton.SetActive(true);
             txtNomor.text = "";
         }
         else
@@ -64,7 +64,7 @@ public class Station3UI : MonoBehaviour
             if (TutorialText == 1)
             {
                 txtKeteranganCara.text = ("Selamat datang pada scene 3");
-                Introduction.SetActive(false);
+                NextStationButton.SetActive(false);
             }
             else if (TutorialText == 2)
             {
