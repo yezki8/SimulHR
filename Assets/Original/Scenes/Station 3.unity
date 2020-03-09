@@ -4217,6 +4217,7 @@ MonoBehaviour:
   isStationComplete: 0
   currQuestion: 0
   score: 0
+  sceneChanger: {fileID: 987152805}
 --- !u!4 &987152803
 Transform:
   m_ObjectHideFlags: 0
@@ -8889,7 +8890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1802504864
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -251,11 +251,11 @@ public class Station2Manager : GameManager
     {
         CalculateScore();
 
-        Debug.Log("Station End. Score: " + score + ". Time left: " + (dueTime - timePassed));
+        Debug.Log("Station 2 End. Score: " + score + ". Time left: " + (dueTime - timePassed));
 
         station2UI.showScore(score);
 
-        //ReportNewScore();
+        ReportNewScore();
 
         sceneChanger.sceneTo("Station 3");
 

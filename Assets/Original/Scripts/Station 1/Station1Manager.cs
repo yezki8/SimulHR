@@ -155,7 +155,7 @@ public class Station1Manager : GameManager
         NavButton.SetActive(true);            //nyalain buttonnya
         station1UI.showScore(score);
 
-        //ReportNewScore();
+        ReportNewScore();
 
         //sceneChanger.sceneToIntro();
 

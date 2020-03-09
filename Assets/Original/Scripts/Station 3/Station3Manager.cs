@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Station3Manager : MonoBehaviour
+public class Station3Manager : GameManager
 {
 
     public Text SoalKanan, SoalKiri;
@@ -16,6 +16,8 @@ public class Station3Manager : MonoBehaviour
     public int currQuestion = 0;           //0 is instruction
     public int score;
     private float timePassed = 0;
+
+    public SceneChanger sceneChanger;
 
     // Start is called before the first frame update
     void Start()
@@ -88,8 +90,18 @@ public class Station3Manager : MonoBehaviour
         return currQuestion;
     }
 
-    public int getScore()
+    public override void ReportNewScore()
     {
-        return score;
+        // Buat nyimpen soal di GameManager utama
+        ProgressCache.Instance.ReportNewValue(score);
+    }
+
+    public void Station3End()
+    {
+        Debug.Log("Station 3 End. Score: " + score);
+
+        ReportNewScore();
+
+        sceneChanger.sceneTo("Station 4");
     }
 }

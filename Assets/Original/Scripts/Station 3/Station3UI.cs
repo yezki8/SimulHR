@@ -51,7 +51,7 @@ public class Station3UI : MonoBehaviour
         if (station3Manager.isStationComplete)
         {
             txtKeteranganCara.text = ("Station 3 telah selesai");
-            score = station3Manager.getScore();
+            score = station3Manager.score;
             txtSoalKanan.text = ("Anda benar ") + score;
             txtSoalKiri.text = ("Dari 30 soal");
             Destroy(ButtonYes.gameObject);
