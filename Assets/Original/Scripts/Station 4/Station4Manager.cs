@@ -22,11 +22,6 @@ public class Station4Manager : GameManager
     public SceneChanger sceneChanger;
     public Station4UI station4UI;
 
-    private void Start()
-    {
-        StartQuestion();
-    }
-
     void FixedUpdate()
     {
         // run the timer only if the question already started
@@ -125,7 +120,6 @@ public class Station4Manager : GameManager
         // ReportNewScore();
 
         sceneChanger.sceneToIntro();
-        ProgressCache.Instance.SaveData();
 
         // To-do: Bikin kata2 selamatnya
     }
