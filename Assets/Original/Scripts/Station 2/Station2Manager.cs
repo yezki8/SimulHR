@@ -257,6 +257,8 @@ public class Station2Manager : GameManager
 
         //ReportNewScore();
 
+        sceneChanger.sceneTo("Station 3");
+
         // To-do: Bikin kata2 selamatnya
     }
 }
