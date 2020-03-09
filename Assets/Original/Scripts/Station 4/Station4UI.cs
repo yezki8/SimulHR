@@ -26,6 +26,12 @@ public class Station4UI : MonoBehaviour
         questionText.text = station4Manager.questionList[station4Manager.currQuestion];
     }    
 
+    public void InterQuestion()
+    {
+        questionText.text = "Okay";
+        timeText.text = "Tekan tombol untuk lanjut.";
+    }
+
     public void NextIntro()
     {
         if (n + 1 < introductionTextList.Length)

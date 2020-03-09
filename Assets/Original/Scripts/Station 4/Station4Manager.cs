@@ -47,6 +47,7 @@ public class Station4Manager : GameManager
     public void StartQuestion()
     {
         isCurrQuestionStarted = true;
+        ceo.SetBool("mendengarkan", false);
         ceo.SetBool("bicara", true);
 
         station4UI.ShowQuestion();
@@ -87,15 +88,19 @@ public class Station4Manager : GameManager
         if (currQuestion == 2)
         {
             // Di pertanyaan 3: Ceo nya heran sama jawabannya
+            yield return new WaitForSeconds(5);
+            ceo.SetBool("mendengarkan", false);
             ceo.SetBool("heran", true);
         }
         else if (currQuestion == 1)
         {
             // Di pertanyaan 2: ceo nya lirik2 ke luar
+            yield return new WaitForSeconds(5);
+            ceo.SetBool("mendengarkan", false);
             ceo.SetBool("lirik", true);
 
             yield return new WaitForSeconds(5);
-
+            ceo.SetBool("lirik", false);
             ceo.SetBool("mendengarkan", true);
         }
     }

@@ -29,7 +29,9 @@ public class AnswerButton4 : MonoBehaviour
     {
         if (!station4UI.isInstructionComplete)
             station4UI.NextIntro();
-        else
+        else if (station4Manager.isCurrQuestionStarted)
             station4Manager.EndQuestion();
+        else
+            station4Manager.StartQuestion();
     }
 }
