@@ -79,7 +79,8 @@ public class Station1UI : MonoBehaviour
 
         if (station1Manager.isStationComplete)
         {
-            
+            txtAngkaSoal.text = ("");
+            txtSoal.text = ("");
         }
     }
 
