@@ -17750,6 +17750,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   station4Manager: {fileID: 934205598}
   isInstructionComplete: 0
+  introductionTextList:
+  - Terimakasih sudah menyempatkan hadir dalam interview kali ini. Tekan tombol di
+    depan anda untuk lanjut.
+  - Anda akan diberikan pertanyaan dan memiliki waktu untuk masing-masing pertanyaan
+    2 menit.
+  - Jika sudah selesai dengan jawaban anda, anda dapat menekan tombolnya untuk lanjut
+    ke pertanyaan berikutnya.
   questionText: {fileID: 947772329}
   timeText: {fileID: 1312286617}
 --- !u!114 &934205598

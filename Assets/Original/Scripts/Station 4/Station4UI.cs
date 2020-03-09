@@ -9,17 +9,34 @@ public class Station4UI : MonoBehaviour
 
     public bool isInstructionComplete = false;
 
+    [TextArea(3, 10)] public string[] introductionTextList;
+    int n = 0;
+
     //kumpulan text
     public Text questionText,
         timeText;
+
+    private void Start()
+    {
+        timeText.text = introductionTextList[n];
+    }
 
     public void ShowQuestion()
     {
         questionText.text = station4Manager.questionList[station4Manager.currQuestion];
     }    
 
-    public void SetInstructionComplete()
+    public void NextIntro()
     {
-        isInstructionComplete = true;
+        if (n + 1 < introductionTextList.Length)
+        {
+            n++;
+            timeText.text = introductionTextList[n];
+        }
+        else
+        {
+            isInstructionComplete = true;
+            station4Manager.StartQuestion();
+        }
     }
 }

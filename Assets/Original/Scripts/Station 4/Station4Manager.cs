@@ -117,7 +117,10 @@ public class Station4Manager : GameManager
     {
         Debug.Log("Station 4 End. Time left: " );
 
-        ReportNewScore();
+        // ReportNewScore();
+
+        sceneChanger.sceneToIntro();
+        ProgressCache.Instance.SaveData();
 
         // To-do: Bikin kata2 selamatnya
     }
